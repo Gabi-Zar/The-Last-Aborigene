@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbr8mad1hk27x"]
+
+[ext_resource type="Script" uid="uid://bksxtw6qaqt5d" path="res://scripts/place_holder_terrain.gd" id="1_itxqv"]
+[ext_resource type="PackedScene" uid="uid://ckreqf83ixejm" path="res://scene/player.tscn" id="1_v0l8b"]
+[ext_resource type="PackedScene" uid="uid://b6a7xqfik03wk" path="res://scene/collectible.tscn" id="2_wp4xf"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_v0l8b")]
+
+[node name="CollectibleDash" parent="." instance=ExtResource("2_wp4xf")]
+position = Vector2(-99, 44)
+collectible_name = "dash"
+
+[node name="CollectibleDoubleJump" parent="." instance=ExtResource("2_wp4xf")]
+position = Vector2(-262, 40)
+collectible_name = "double_jump"
+
+[node name="PlaceHolderTerrain" type="StaticBody2D" parent="."]
+script = ExtResource("1_itxqv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlaceHolderTerrain"]
+
+[node name="Polygon2D" type="Polygon2D" parent="PlaceHolderTerrain"]
+color = Color(0.0056611504, 0.0056611514, 0.00566115, 1)
+polygon = PackedVector2Array(-448, 64, 512, 64, 512, -64, 576, -64, 640, -64, 640, 128, 704, 128, 704, 320, 832, 320, 832, -64, 896, -64, 896, 384, 576, 384, 576, 128, -448, 128)
