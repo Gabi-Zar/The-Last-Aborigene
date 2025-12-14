@@ -1,0 +1,167 @@
+[gd_scene load_steps=13 format=3 uid="uid://b6a7xqfik03wk"]
+
+[ext_resource type="Script" uid="uid://4swws6aoy8gt" path="res://scripts/collectible.gd" id="1_85dlb"]
+[ext_resource type="Texture2D" uid="uid://dyb26y46is6bc" path="res://assets/collectible_texture.png" id="2_2je3v"]
+[ext_resource type="LabelSettings" uid="uid://bx76ry8c4igho" path="res://resources/default_pop_up_label.tres" id="3_2je3v"]
+
+[sub_resource type="Animation" id="Animation_2je3v"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_85dlb"]
+resource_name = "collectible_animation"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.4, -0.16666667, -0.033333343, 0, 0, 1, -0.16666667, 0.033333343, 0, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.4, -0.16666667, -0.033333343, 0, 0, 1, -0.16666667, 0.033333343, 0, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3op07"]
+_data = {
+&"RESET": SubResource("Animation_2je3v"),
+&"collectible_animation": SubResource("Animation_85dlb")
+}
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_85dlb"]
+a = Vector2(8, 0)
+b = Vector2(-8, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2je3v"]
+size = Vector2(32, 32)
+
+[sub_resource type="Animation" id="Animation_s0q44"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3op07"]
+resource_name = "text_appear"
+length = 1000.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_83l3s"]
+resource_name = "text_disappear"
+length = 1000.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gu3x4"]
+_data = {
+&"RESET": SubResource("Animation_s0q44"),
+&"text_appear": SubResource("Animation_3op07"),
+&"text_disappear": SubResource("Animation_83l3s")
+}
+
+[node name="Collectible" type="RigidBody2D"]
+script = ExtResource("1_85dlb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2je3v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_3op07")
+}
+
+[node name="FloorDetectorRayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 4)
+hit_from_inside = true
+
+[node name="FloorCollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_85dlb")
+disabled = true
+
+[node name="GrabArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabArea2D"]
+shape = SubResource("RectangleShape2D_2je3v")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(320, 64)
+offset_left = -160.0
+offset_top = -160.0
+offset_right = 160.0
+offset_bottom = -96.0
+text = "press e to pick up"
+label_settings = ExtResource("3_2je3v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
+libraries = {
+&"": SubResource("AnimationLibrary_gu3x4")
+}
