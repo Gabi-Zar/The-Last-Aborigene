@@ -12,6 +12,8 @@ var double_jump_cooldown := false
 var jump_limit = 0.0
 var is_jumping := false
 
+@onready var Sprite = $AnimatedSprite2D
+
 func _ready() -> void:
 	dash_cooldown.wait_time = 1
 	dash_cooldown.one_shot = true
@@ -53,6 +55,10 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		latest_direction = direction
 		velocity.x = move_toward(velocity.x, direction * SPEED, SPEED)
+		if direction == 1:
+			Sprite.set_animation("right")
+		else:
+			Sprite.set_animation("left")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
