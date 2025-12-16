@@ -1,10 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckreqf83ixejm"]
+[gd_scene load_steps=6 format=3 uid="uid://ckreqf83ixejm"]
 
 [ext_resource type="Script" uid="uid://dbusxxx3fd5ef" path="res://scripts/player.gd" id="1_xo3ru"]
+[ext_resource type="Texture2D" uid="uid://veak0s13dr0y" path="res://assets/aborigene_left.png" id="2_hjaqi"]
+[ext_resource type="Texture2D" uid="uid://df5dmbng64hma" path="res://assets/aborigene_right.png" id="3_fvtld"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hjaqi"]
-radius = 16.0
-height = 64.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvtld"]
+size = Vector2(134, 146)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fvtld"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hjaqi")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fvtld")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_xo3ru")
@@ -13,7 +33,14 @@ script = ExtResource("1_xo3ru")
 process_callback = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_hjaqi")
+position = Vector2(-1, 9)
+shape = SubResource("RectangleShape2D_fvtld")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
 polygon = PackedVector2Array(-16, -32, 16, -32, 16, 32, -16, 32)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.26, 0.26)
+sprite_frames = SubResource("SpriteFrames_fvtld")
+animation = &"left"

@@ -9,7 +9,6 @@ extends RigidBody2D
 @onready var collectible_label = $Label
 @onready var collectible_label_animation = $Label/AnimationPlayer
 @onready var player = Manager.player
-@onready var terrain = Manager.terrain
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,6 +26,6 @@ func _process(_delta: float) -> void:
 	else:
 		collectible_label_animation.play("text_disappear")
 	
-	if collectible_floor_detector.get_collider() == terrain:
+	if collectible_floor_detector.get_collider() == Manager.terrain:
 		collectible_floor_collision.disabled = false
 		collectible_label.show()

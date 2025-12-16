@@ -7,6 +7,7 @@
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_v0l8b")]
+position = Vector2(0, -24)
 
 [node name="CollectibleDash" parent="." instance=ExtResource("2_wp4xf")]
 position = Vector2(-99, 44)

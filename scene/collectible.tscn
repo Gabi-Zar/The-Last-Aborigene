@@ -41,7 +41,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 2, 2),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.4, -0.16666667, -0.033333343, 0, 0, 1, -0.16666667, 0.033333343, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.6, -0.16666667, -0.033333343, 0, 0, 1, -0.16666667, 0.033333343, 0, 0),
 "times": PackedFloat32Array(0, 1, 2)
 }
 tracks/1/type = "bezier"
@@ -52,7 +52,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 2, 2),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.4, -0.16666667, -0.033333343, 0, 0, 1, -0.16666667, 0.033333343, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.6, -0.16666667, -0.033333343, 0, 0, 1, -0.16666667, 0.033333343, 0, 0),
 "times": PackedFloat32Array(0, 1, 2)
 }
 
@@ -165,3 +165,11 @@ vertical_alignment = 1
 libraries = {
 &"": SubResource("AnimationLibrary_gu3x4")
 }
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+texture = ExtResource("2_2je3v")
+explosiveness = 1.0
+randomness = 0.39
+initial_velocity_max = 377.36
+scale_amount_min = 0.1
+scale_amount_max = 0.5
