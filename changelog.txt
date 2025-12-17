@@ -1,1 +1,1 @@
-
+- Added particle effect to the collectable
