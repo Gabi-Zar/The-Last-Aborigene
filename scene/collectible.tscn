@@ -167,9 +167,14 @@ libraries = {
 }
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
 texture = ExtResource("2_2je3v")
+lifetime = 0.5
+one_shot = true
 explosiveness = 1.0
 randomness = 0.39
+spread = 180.0
+gravity = Vector2(0, 0)
 initial_velocity_max = 377.36
 scale_amount_min = 0.1
 scale_amount_max = 0.5
