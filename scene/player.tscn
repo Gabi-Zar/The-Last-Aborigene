@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://df5dmbng64hma" path="res://assets/aborigene_right.png" id="3_fvtld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvtld"]
-size = Vector2(134, 146)
+size = Vector2(134, 144)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fvtld"]
 animations = [{
@@ -33,7 +33,7 @@ script = ExtResource("1_xo3ru")
 process_callback = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 9)
+position = Vector2(-1, 10)
 shape = SubResource("RectangleShape2D_fvtld")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
@@ -41,6 +41,7 @@ visible = false
 polygon = PackedVector2Array(-16, -32, 16, -32, 16, 32, -16, 32)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.26, 0.26)
+position = Vector2(-1, 10)
+scale = Vector2(3.4358976, 3.4358978)
 sprite_frames = SubResource("SpriteFrames_fvtld")
 animation = &"left"

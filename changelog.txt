@@ -1,1 +1,2 @@
 - Added particle effect to the collectable
+- Updated aborigene sprite and Added boomrang sprite
