@@ -50,6 +50,6 @@ sprite_frames = SubResource("SpriteFrames_fvtld")
 animation = &"left"
 
 [node name="BoomrangSprite2D" type="Sprite2D" parent="."]
-position = Vector2(50, -54)
-scale = Vector2(3.4574413, 3.4574413)
+position = Vector2(51, -57.000004)
+scale = Vector2(3.9430065, 3.9430065)
 texture = ExtResource("4_ct4mp")
