@@ -67,11 +67,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, direction * SPEED, SPEED)
 		if direction == 1:
 			sprite.set_animation("right")
-			boomrang_sprite.position.x = -50.0
+			boomrang_sprite.position.x = -51.0
 			boomrang_sprite.rotation_degrees = 270.0
 		else:
 			sprite.set_animation("left")
-			boomrang_sprite.position.x = 50.0
+			boomrang_sprite.position.x = 51.0
 			boomrang_sprite.rotation_degrees = 0.0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -92,9 +92,11 @@ func _physics_process(delta: float) -> void:
 			boomrang_instance.position = position + boomrang_sprite.position
 			boomrang_instance.rotation = boomrang_sprite.rotation
 			if boomrang_instance.rotation == 0.0:
-				boomrang_instance.angular_velocity = deg_to_rad(-720)
+				boomrang_instance.direction = 1
+				boomrang_instance.apply_impulse(Vector2(-1500, -200))
 			else:
-				boomrang_instance.angular_velocity = deg_to_rad(720)
+				boomrang_instance.direction = -1
+				boomrang_instance.apply_impulse(Vector2(1500, -200))
 			Manager.main.add_child(boomrang_instance)
 			
 			boomrang_sprite.hide()
