@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dpakgqvnug7o0"
+path="res://.godot/imported/53 Silksong.mp3-e4f841e62bfc2df8f3dac641e8e1b12b.mp3str"
+
+[deps]
+
+source_file="res://assets/music/53 Silksong.mp3"
+dest_files=["res://.godot/imported/53 Silksong.mp3-e4f841e62bfc2df8f3dac641e8e1b12b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
