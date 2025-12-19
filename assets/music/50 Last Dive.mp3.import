@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dhq3nqh0fg02v"
+path="res://.godot/imported/50 Last Dive.mp3-aab9bb8aee5c22abac0eb30a22297633.mp3str"
+
+[deps]
+
+source_file="res://assets/music/50 Last Dive.mp3"
+dest_files=["res://.godot/imported/50 Last Dive.mp3-aab9bb8aee5c22abac0eb30a22297633.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
