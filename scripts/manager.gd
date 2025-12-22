@@ -3,7 +3,7 @@ extends Node
 @onready var root = Engine.get_main_loop().root
 @onready var main = root.get_node("Main")
 @onready var player = root.get_node("Main/Player")
-@onready var terrain = root.get_node("Main/PlaceHolderTerrain")
+@onready var terrain = root.get_node("Main/Terrain")
 
 var is_dash_unlocked := false
 var is_double_jump_unlocked := false
