@@ -20,7 +20,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(return_timer.time_left)
 	if direction == 1:
 		angular_velocity = deg_to_rad(-720)
 	else:
