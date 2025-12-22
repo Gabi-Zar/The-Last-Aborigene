@@ -40,6 +40,7 @@ func _process(_delta: float) -> void:
 	else:
 		collectible_label_animation.play("text_disappear")
 	
+	print(collectible_floor_detector.get_collider())
 	if collectible_floor_detector.get_collider() == Manager.terrain:
 		collectible_floor_collision.disabled = false
 		collectible_label.show()
