@@ -1,3 +1,4 @@
 - Added particle effect to the collectable
 - Updated aborigene sprite and Added boomrang sprite
 - Added the boomrang WIP and UI assets
+- Added and Changed a lot of things

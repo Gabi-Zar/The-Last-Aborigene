@@ -151,6 +151,7 @@ shape = SubResource("RectangleShape2D_2je3v")
 [node name="Label" type="Label" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0)
+z_index = 2
 custom_minimum_size = Vector2(320, 64)
 offset_left = -160.0
 offset_top = -160.0

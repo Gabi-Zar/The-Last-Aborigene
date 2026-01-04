@@ -11,23 +11,32 @@ var double_jump_cooldown := false
 var jump_limit = 0.0
 var is_jumping := false
 
+var health := 5
+var strenght := 20
+var is_dead := false
+var can_move := true
+
 var dash_cooldown := Timer.new()
-var boomrang_cooldown := Timer.new()
+var damage_cooldown := Timer.new()
+var boomrang_cooldown := false
 
 @export var boomrang: PackedScene
 var boomrang_instance: Node
 
 @onready var sprite = $AnimatedSprite2D
 @onready var boomrang_sprite = $BoomrangSprite2D
+@onready var collision_area = $Area2D
+@onready var animation_player = $AnimationPlayer
 
 func _ready() -> void:
 	dash_cooldown.wait_time = 1
 	dash_cooldown.one_shot = true
 	add_child(dash_cooldown)
 	
-	boomrang_cooldown.wait_time = 0.5
-	boomrang_cooldown.one_shot = true
-	add_child(boomrang_cooldown)
+	damage_cooldown.wait_time = 0.4
+	damage_cooldown.one_shot = true
+	add_child(damage_cooldown)
+
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -62,7 +71,7 @@ func _physics_process(delta: float) -> void:
 	
 	############# Movement #############
 	var direction := Input.get_axis("Left", "Right")
-	if direction:
+	if direction and can_move:
 		latest_direction = direction
 		velocity.x = move_toward(velocity.x, direction * SPEED, SPEED)
 		if direction == 1:
@@ -82,10 +91,11 @@ func _physics_process(delta: float) -> void:
 				velocity.x += latest_direction * DASH_VELOCITY
 				dash_cooldown.start()
 	
-	move_and_slide()
+	if can_move:
+		move_and_slide()
 	
 	############# Attaque #############
-	if boomrang_cooldown.is_stopped():
+	if not boomrang_cooldown and can_move:
 		boomrang_sprite.show()
 		if Input.is_action_just_pressed("Attack"):
 			boomrang_instance = boomrang.instantiate()
@@ -93,11 +103,31 @@ func _physics_process(delta: float) -> void:
 			boomrang_instance.rotation = boomrang_sprite.rotation
 			if boomrang_instance.rotation == 0.0:
 				boomrang_instance.direction = 1
-				boomrang_instance.apply_impulse(Vector2(-1500, -200))
+				boomrang_instance.apply_impulse(Vector2(-1500, -50))
 			else:
 				boomrang_instance.direction = -1
-				boomrang_instance.apply_impulse(Vector2(1500, -200))
+				boomrang_instance.apply_impulse(Vector2(1500, -50))
 			Manager.main.add_child(boomrang_instance)
 			
 			boomrang_sprite.hide()
-			boomrang_cooldown.start()
+			boomrang_cooldown = true
+	
+	############# Game over #############
+	if health <= 0:
+		is_dead = true
+		can_move = false
+		hide()
+	
+	############# Damage #############
+	if not is_dead and damage_cooldown.is_stopped():
+		for mob in Manager.present_mob_list:
+			if mob in collision_area.get_overlapping_bodies():
+				update_health(mob.damage)
+				animation_player.play("damage")
+				# SHAKE SCREEN TO DO
+				damage_cooldown.start()
+
+
+func update_health(life = 1):
+	Manager.hud.get_node("HealthBar").value += life
+	health += life

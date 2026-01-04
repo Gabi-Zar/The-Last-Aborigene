@@ -1,0 +1,95 @@
+[gd_scene load_steps=9 format=3 uid="uid://dtg748uoioata"]
+
+[ext_resource type="Script" uid="uid://dtm5jph73rvmb" path="res://scripts/bench.gd" id="1_ofh58"]
+[ext_resource type="Texture2D" uid="uid://bpm7opdmauh4i" path="res://assets/place_holder_block.png" id="2_y3nb7"]
+[ext_resource type="LabelSettings" uid="uid://bx76ry8c4igho" path="res://resources/default_pop_up_label.tres" id="3_2kviu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jm0ua"]
+size = Vector2(160, 192)
+
+[sub_resource type="Animation" id="Animation_s0q44"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3op07"]
+resource_name = "text_appear"
+length = 1000.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_83l3s"]
+resource_name = "text_disappear"
+length = 1000.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gu3x4"]
+_data = {
+&"RESET": SubResource("Animation_s0q44"),
+&"text_appear": SubResource("Animation_3op07"),
+&"text_disappear": SubResource("Animation_83l3s")
+}
+
+[node name="Tente" type="Node2D"]
+script = ExtResource("1_ofh58")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_jm0ua")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(3.8146973e-06, -48)
+scale = Vector2(5, 7.0000005)
+texture = ExtResource("2_y3nb7")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+custom_minimum_size = Vector2(320, 64)
+offset_left = -160.0
+offset_top = -232.0
+offset_right = 160.0
+offset_bottom = -168.0
+text = "press e to rest"
+label_settings = ExtResource("3_2kviu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
+libraries = {
+&"": SubResource("AnimationLibrary_gu3x4")
+}
