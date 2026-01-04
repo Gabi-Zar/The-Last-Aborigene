@@ -1,0 +1,411 @@
+[gd_scene load_steps=20 format=3 uid="uid://da5umeedxk31x"]
+
+[ext_resource type="Script" uid="uid://bp170m3jd5j1s" path="res://scripts/hud.gd" id="1_qy82l"]
+[ext_resource type="Texture2D" uid="uid://h1wchpi7tr15" path="res://assets/UI/Buttons/continue_normal.png" id="2_sjh6b"]
+[ext_resource type="Texture2D" uid="uid://biy6rd88yktku" path="res://assets/UI/Buttons/continue_pressed.png" id="3_xphas"]
+[ext_resource type="Texture2D" uid="uid://bbmehu1onvrs6" path="res://assets/UI/Buttons/continue_hover.png" id="4_kc6cu"]
+[ext_resource type="Texture2D" uid="uid://dbk7g1inylq00" path="res://assets/UI/Buttons/quit_normal.png" id="5_62he3"]
+[ext_resource type="Texture2D" uid="uid://cdw2ooqas6ch6" path="res://assets/UI/Buttons/quit_pressed.png" id="6_b48p2"]
+[ext_resource type="Texture2D" uid="uid://dsl4jdpt75on4" path="res://assets/UI/Buttons/quit_hover.png" id="7_086as"]
+[ext_resource type="Texture2D" uid="uid://bjo2pc2vio4e2" path="res://assets/UI/HealthBar/empty.png" id="8_xphas"]
+[ext_resource type="Texture2D" uid="uid://v0rek4n1mvyn" path="res://assets/UI/HealthBar/full.png" id="9_kc6cu"]
+[ext_resource type="Texture2D" uid="uid://cpgqfr3k2nf86" path="res://assets/UI/vignette.png" id="10_086as"]
+[ext_resource type="Texture2D" uid="uid://dvardvnqbdkv0" path="res://assets/UI/Buttons/retry_normal.png" id="11_mg6t4"]
+[ext_resource type="Texture2D" uid="uid://vcmj6q5d2pdf" path="res://assets/UI/Buttons/retry_pressed.png" id="12_fjvr2"]
+[ext_resource type="Texture2D" uid="uid://vlkkb8mmoau3" path="res://assets/UI/Buttons/retry_hover.png" id="13_nh6w1"]
+
+[sub_resource type="Animation" id="Animation_mg6t4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_086as"]
+resource_name = "fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fjvr2"]
+_data = {
+&"RESET": SubResource("Animation_mg6t4"),
+&"fade_out": SubResource("Animation_086as")
+}
+
+[sub_resource type="Animation" id="Animation_02pqt"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VBoxContainer:modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("VBoxContainer:modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("VBoxContainer:modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("VBoxContainer:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_bmv2p"]
+resource_name = "game_over_menu_appear"
+length = 3.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.5, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.5, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.5, 0, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.5, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VBoxContainer:modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2, 3)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("VBoxContainer:modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2, 3)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("VBoxContainer:modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.33333334, 0, 0, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2, 3)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("VBoxContainer:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.33333334, 0, 0, 0, 1, -0.16666667, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 2, 3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ag3n"]
+_data = {
+&"RESET": SubResource("Animation_02pqt"),
+&"game_over_menu_appear": SubResource("Animation_bmv2p")
+}
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_qy82l")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FadeInOut" type="Control" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control/FadeInOut"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/FadeInOut"]
+libraries = {
+&"": SubResource("AnimationLibrary_fjvr2")
+}
+
+[node name="HUD" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HealthBar" type="TextureProgressBar" parent="Control/HUD"]
+layout_mode = 1
+offset_left = 31.999998
+offset_top = 31.999998
+offset_right = 105.0
+offset_bottom = 45.0
+scale = Vector2(5, 5)
+max_value = 5.0
+value = 5.0
+rounded = true
+texture_under = ExtResource("8_xphas")
+texture_progress = ExtResource("9_kc6cu")
+
+[node name="PauseMenu" type="Control" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control/PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -196.0
+offset_right = 128.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="ContinueTextureButton" type="TextureButton" parent="Control/PauseMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+texture_normal = ExtResource("2_sjh6b")
+texture_pressed = ExtResource("3_xphas")
+texture_hover = ExtResource("4_kc6cu")
+stretch_mode = 5
+
+[node name="QuitTextureButton" type="TextureButton" parent="Control/PauseMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+texture_normal = ExtResource("5_62he3")
+texture_pressed = ExtResource("6_b48p2")
+texture_hover = ExtResource("7_086as")
+stretch_mode = 5
+
+[node name="GameOverMenu" type="Control" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/GameOverMenu"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_086as")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/GameOverMenu"]
+libraries = {
+&"": SubResource("AnimationLibrary_0ag3n")
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/GameOverMenu"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -196.0
+offset_right = 128.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="RetryTextureButton" type="TextureButton" parent="Control/GameOverMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+texture_normal = ExtResource("11_mg6t4")
+texture_pressed = ExtResource("12_fjvr2")
+texture_hover = ExtResource("13_nh6w1")
+stretch_mode = 5
+
+[node name="QuitTextureButton" type="TextureButton" parent="Control/GameOverMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+texture_normal = ExtResource("5_62he3")
+texture_pressed = ExtResource("6_b48p2")
+texture_hover = ExtResource("7_086as")
+stretch_mode = 5
+
+[connection signal="pressed" from="Control/PauseMenu/VBoxContainer/ContinueTextureButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Control/PauseMenu/VBoxContainer/QuitTextureButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Control/GameOverMenu/VBoxContainer/RetryTextureButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Control/GameOverMenu/VBoxContainer/QuitTextureButton" to="." method="_on_quit_button_pressed"]
