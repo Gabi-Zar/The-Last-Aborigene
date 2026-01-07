@@ -22,9 +22,9 @@ func display_diapo():
 	$LabelDiapo.text = "Diapo %d / %d" % [diapo_index + 1, diapos.size()]
 
 func _process(delta: float) -> void:
-	if (Input.is_action_just_pressed("ui_right") or Input.is_action_just_pressed("Right")) and diapo_index < diapos.size() - 1:
+	if Input.is_action_just_pressed("Right") and diapo_index < diapos.size() - 1:
 		diapo_index += 1
 		display_diapo()
-	elif (Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("Left")) and diapo_index > 0:
+	elif Input.is_action_just_pressed("Left") and diapo_index > 0:
 		diapo_index -= 1
 		display_diapo()
