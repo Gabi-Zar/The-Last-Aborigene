@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsb2xyptx4lji"]
+[gd_scene load_steps=4 format=3 uid="uid://dsb2xyptx4lji"]
 
-[ext_resource type="Texture2D" uid="uid://bud1i4hp80ojk" path="res://assets/background/background2.png" id="1_2byv8"]
-[ext_resource type="LabelSettings" uid="uid://3avxjuddcbce" path="res://resources/default_banner_label.tres" id="2_j4cdv"]
+[ext_resource type="Texture2D" uid="uid://bwcn6q7s6tbyp" path="res://assets/diapo/scene/diapo1.png" id="1_2byv8"]
+[ext_resource type="Script" uid="uid://cuo0e4k3s43vk" path="res://scripts/diaporama.gd" id="1_j4cdv"]
+[ext_resource type="Texture2D" uid="uid://bh21o5qaukqtb" path="res://assets/diapo/scene/diapo2.png" id="2_j4cdv"]
 
 [node name="Diaporama" type="Control"]
 layout_mode = 3
@@ -10,34 +11,71 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_j4cdv")
 
-[node name="1" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="1"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TextureRect1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 texture = ExtResource("1_2byv8")
 
-[node name="Label" type="Label" parent="1"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -496.0
-offset_top = 16.0
-offset_right = -248.0
-offset_bottom = 55.0
-grow_horizontal = 2
-scale = Vector2(4, 4)
-text = "The Last aborigine"
-label_settings = ExtResource("2_j4cdv")
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_j4cdv")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_2byv8")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_2byv8")
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_2byv8")
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_2byv8")
+
+[node name="TextureRect7" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_2byv8")
+
+[node name="TextureRect8" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_2byv8")
+
+[node name="TextureRect9" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_2byv8")
+
+[node name="LabelDiapo" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
