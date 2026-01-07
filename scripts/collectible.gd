@@ -10,7 +10,6 @@ extends RigidBody2D
 @onready var collectible_label = $Label
 @onready var collectible_label_animation = $Label/AnimationPlayer
 @onready var collectible_particle = $CPUParticles2D
-@onready var player = Manager.player
 
 var death_timer := Timer.new()
 var is_grabed = false
@@ -27,9 +26,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if player in collectible_area.get_overlapping_bodies():
+	if Manager.player in collectible_area.get_overlapping_bodies():
 		collectible_label_animation.play("text_appear")
-		if Input.is_action_just_pressed("Grab"):
+		if Input.is_action_just_pressed("Interact"):
 			Manager.item_grabed(collectible_name)
 			collectible_sprite.hide()
 			is_grabed = true
