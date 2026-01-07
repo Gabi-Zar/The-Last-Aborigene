@@ -27,14 +27,9 @@ def rand_string(character_set, length):
 def main(stdscr):
 
     curses.curs_set(0)
-    curses.curs_set(0)
-    curses.start_color()
-    try:
-        curses.use_default_colors()
-    except Exception:
-        pass
     curses.init_pair(9, FG, BG)
     stdscr.bkgd(curses.color_pair(9))
+    curses.start_color()
     size = stdscr.getmaxyx()
 
     # background is a matrix of the actual letters (not lit up) -- the underlay.
