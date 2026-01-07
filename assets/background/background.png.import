@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df5dmbng64hma"
-path="res://.godot/imported/aborigene_right.png-92fadb79ab184d23ba54d614a546c151.ctex"
+uid="uid://dcts0c64ex87e"
+path="res://.godot/imported/background.png-af8116bd94e27df8cdb7b0ec54dd4e56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/aborigene_right.png"
-dest_files=["res://.godot/imported/aborigene_right.png-92fadb79ab184d23ba54d614a546c151.ctex"]
+source_file="res://assets/background/background.png"
+dest_files=["res://.godot/imported/background.png-af8116bd94e27df8cdb7b0ec54dd4e56.ctex"]
 
 [params]
 

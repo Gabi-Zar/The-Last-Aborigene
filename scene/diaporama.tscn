@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsb2xyptx4lji"]
+
+[ext_resource type="Texture2D" uid="uid://bud1i4hp80ojk" path="res://assets/background/background2.png" id="1_2byv8"]
+[ext_resource type="LabelSettings" uid="uid://3avxjuddcbce" path="res://resources/default_banner_label.tres" id="2_j4cdv"]
+
+[node name="Diaporama" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="1" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2byv8")
+
+[node name="Label" type="Label" parent="1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -496.0
+offset_top = 16.0
+offset_right = -248.0
+offset_bottom = 55.0
+grow_horizontal = 2
+scale = Vector2(4, 4)
+text = "The Last aborigine"
+label_settings = ExtResource("2_j4cdv")

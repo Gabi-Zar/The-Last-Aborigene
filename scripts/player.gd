@@ -75,11 +75,11 @@ func _physics_process(delta: float) -> void:
 		latest_direction = direction
 		velocity.x = move_toward(velocity.x, direction * SPEED, SPEED)
 		if direction == 1:
-			sprite.set_animation("right")
+			sprite.play("right")
 			boomrang_sprite.position.x = -51.0
 			boomrang_sprite.rotation_degrees = 270.0
 		else:
-			sprite.set_animation("left")
+			sprite.play("left")
 			boomrang_sprite.position.x = 51.0
 			boomrang_sprite.rotation_degrees = 0.0
 	else:

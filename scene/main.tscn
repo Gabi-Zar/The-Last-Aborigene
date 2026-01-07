@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://bbr8mad1hk27x"]
+[gd_scene load_steps=11 format=4 uid="uid://bbr8mad1hk27x"]
 
 [ext_resource type="AudioStream" uid="uid://co0pr2ifkxr4d" path="res://assets/music/52 Sister of the Void.mp3" id="1_0ha60"]
 [ext_resource type="Script" uid="uid://864ouwvfm0y0" path="res://scripts/main.gd" id="1_4j5ol"]
 [ext_resource type="Script" uid="uid://bksxtw6qaqt5d" path="res://scripts/place_holder_terrain.gd" id="1_itxqv"]
 [ext_resource type="PackedScene" uid="uid://ckreqf83ixejm" path="res://scene/player.tscn" id="1_v0l8b"]
+[ext_resource type="Texture2D" uid="uid://dcts0c64ex87e" path="res://assets/background/background.png" id="2_tqoya"]
 [ext_resource type="PackedScene" uid="uid://b6a7xqfik03wk" path="res://scene/collectible.tscn" id="2_wp4xf"]
 [ext_resource type="TileSet" uid="uid://cn5r042ub3aqq" path="res://assets/mk_16_16_nature_tileset_godot/tileset_mk_16_16_nature_tileset_godot.tres" id="3_brvut"]
 [ext_resource type="PackedScene" uid="uid://da5umeedxk31x" path="res://scene/hud.tscn" id="7_p1hux"]
@@ -17,14 +18,15 @@ script = ExtResource("1_4j5ol")
 z_index = -10
 
 [node name="Parallax2D" type="Parallax2D" parent="Background"]
-scroll_scale = Vector2(0, 0)
+scroll_scale = Vector2(0.1, 0.1)
 
-[node name="ColorRect" type="ColorRect" parent="Background/Parallax2D"]
-offset_left = -5000.0
-offset_top = -5000.0
-offset_right = 5000.0
-offset_bottom = 5000.0
-color = Color(0.1716887, 0.40397072, 1, 1)
+[node name="ColorRect" type="TextureRect" parent="Background/Parallax2D"]
+offset_left = -47584.0
+offset_top = -43800.0
+offset_right = 52416.0
+offset_bottom = 56200.0
+texture = ExtResource("2_tqoya")
+stretch_mode = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_0ha60")
