@@ -1,10 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://ckreqf83ixejm"]
+[gd_scene load_steps=16 format=3 uid="uid://ckreqf83ixejm"]
 
 [ext_resource type="Script" uid="uid://dbusxxx3fd5ef" path="res://scripts/player.gd" id="1_xo3ru"]
-[ext_resource type="Texture2D" uid="uid://veak0s13dr0y" path="res://assets/aborigene_left.png" id="2_hjaqi"]
 [ext_resource type="PackedScene" uid="uid://235ddrv6g1dw" path="res://scene/boomrang.tscn" id="2_s4jxa"]
-[ext_resource type="Texture2D" uid="uid://df5dmbng64hma" path="res://assets/aborigene_right.png" id="3_fvtld"]
+[ext_resource type="Texture2D" uid="uid://cdt2rrog03kki" path="res://assets/aborigene_left1.png" id="3_2fvbb"]
+[ext_resource type="Texture2D" uid="uid://d47ej0h828f8" path="res://assets/aborigene_left2.png" id="4_2fvbb"]
 [ext_resource type="Texture2D" uid="uid://bnyd4cavcpgb4" path="res://assets/boomrang.png" id="4_ct4mp"]
+[ext_resource type="Texture2D" uid="uid://dqnb34rfb4ljb" path="res://assets/aborigene_left3.png" id="5_ml7e8"]
+[ext_resource type="Texture2D" uid="uid://dxo6y0ykbxsvl" path="res://assets/aborigene_right1.png" id="6_ml7e8"]
+[ext_resource type="Texture2D" uid="uid://du3lohhdyyqov" path="res://assets/aborigene_right2.png" id="7_ihjo1"]
+[ext_resource type="Texture2D" uid="uid://co8ijh2n6rtiy" path="res://assets/aborigene_right3.png" id="8_dk1vr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvtld"]
 size = Vector2(134, 144)
@@ -16,20 +20,59 @@ size = Vector2(136, 146)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_hjaqi")
+"texture": ExtResource("3_2fvbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2fvbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ml7e8")
 }],
 "loop": true,
 "name": &"left",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_fvtld")
+"texture": ExtResource("6_ml7e8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ihjo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dk1vr")
 }],
 "loop": true,
 "name": &"right",
-"speed": 5.0
+"speed": 4.0
 }]
+
+[sub_resource type="Animation" id="Animation_oh5ij"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BoomrangSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_s4jxa"]
 resource_name = "damage"
@@ -57,33 +100,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(3682719500000, 3682719500000, 3682719500000, 1), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_oh5ij"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BoomrangSprite2D:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hp4bs"]
@@ -117,7 +133,7 @@ polygon = PackedVector2Array(-16, -32, 16, -32, 16, 32, -16, 32)
 position = Vector2(-1, 10)
 scale = Vector2(3.4358976, 3.4358978)
 sprite_frames = SubResource("SpriteFrames_fvtld")
-animation = &"left"
+animation = &"right"
 
 [node name="BoomrangSprite2D" type="Sprite2D" parent="."]
 position = Vector2(51, -57.000004)

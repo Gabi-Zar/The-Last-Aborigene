@@ -19,15 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://dkf436eoldm3i" path="res://assets/UI/Panels/red_banner.png" id="15_g7f83"]
 [ext_resource type="Texture2D" uid="uid://bs04jkdv8pqqt" path="res://assets/UI/Buttons/yes_normal.png" id="16_r3wny"]
 [ext_resource type="Texture2D" uid="uid://bfhqxyq4h82vx" path="res://assets/UI/Buttons/yes_pressed.png" id="17_ruj6x"]
+[ext_resource type="LabelSettings" uid="uid://3avxjuddcbce" path="res://resources/default_banner_label.tres" id="18_ruj6x"]
 [ext_resource type="Texture2D" uid="uid://bs73o5sop68y6" path="res://assets/UI/Buttons/yes_hover.png" id="18_xcvof"]
 [ext_resource type="Texture2D" uid="uid://dkknss1tn5h6q" path="res://assets/UI/Buttons/no_normal.png" id="19_mh7xh"]
 [ext_resource type="Texture2D" uid="uid://cnscuvvu6a76s" path="res://assets/UI/Buttons/no_pressed.png" id="20_0d2hm"]
 [ext_resource type="Texture2D" uid="uid://dwwlav0kp4ogq" path="res://assets/UI/Buttons/no_hover.png" id="21_wwk1p"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_eq0s3"]
-font_size = 28
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3lrx3"]
 font_size = 20
@@ -155,7 +151,7 @@ offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Debug Text"
-label_settings = SubResource("LabelSettings_eq0s3")
+label_settings = ExtResource("18_ruj6x")
 horizontal_alignment = 1
 vertical_alignment = 1
 
