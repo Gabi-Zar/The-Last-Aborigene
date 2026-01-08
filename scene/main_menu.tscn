@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ba673y8fp5o3t" path="res://scripts/main_menu.gd" id="1_3er1b"]
 [ext_resource type="Texture2D" uid="uid://b7fqnco04f1ty" path="res://assets/UI/Buttons/new_game_normal.png" id="2_cht4j"]
 [ext_resource type="AudioStream" uid="uid://dpakgqvnug7o0" path="res://assets/music/53 Silksong.mp3" id="2_r3wny"]
-[ext_resource type="Texture2D" uid="uid://cfo6iaw1lalxf" path="res://assets/UI/Buttons/new_game_pressed.png" id="3_os2d6"]
+[ext_resource type="Texture2D" uid="uid://dwwlav0kp4ogq" path="res://assets/UI/Buttons/no_hover.png" id="3_os2d6"]
 [ext_resource type="Texture2D" uid="uid://cgsryfdh5e7sh" path="res://assets/UI/Buttons/new_game_hover.png" id="4_v0h3m"]
 [ext_resource type="Texture2D" uid="uid://h1wchpi7tr15" path="res://assets/UI/Buttons/continue_normal.png" id="5_sra1m"]
 [ext_resource type="Texture2D" uid="uid://biy6rd88yktku" path="res://assets/UI/Buttons/continue_pressed.png" id="6_unisd"]
