@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfkofpt7ko58u"
-path="res://.godot/imported/SummitEnd04.png-69ac896b610b946f102adbe8a02b477b.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://assets/background/SummitEnd04.png"
-dest_files=["res://.godot/imported/SummitEnd04.png-69ac896b610b946f102adbe8a02b477b.ctex"]
 
 [params]
 
