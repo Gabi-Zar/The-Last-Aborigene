@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://i3vvbuk86f1r"
-path="res://.godot/imported/MirrorTemple00.png-72820adc12b1cacbff5c62e6152e1a18.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://assets/background/MirrorTemple00.png"
-dest_files=["res://.godot/imported/MirrorTemple00.png-72820adc12b1cacbff5c62e6152e1a18.ctex"]
 
 [params]
 

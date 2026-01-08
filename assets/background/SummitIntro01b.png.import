@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://da2q1po67ha33"
-path="res://.godot/imported/SummitIntro01b.png-5c067e2bc88f0ad76e9549b9a0648386.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://assets/background/SummitIntro01b.png"
-dest_files=["res://.godot/imported/SummitIntro01b.png-5c067e2bc88f0ad76e9549b9a0648386.ctex"]
 
 [params]
 

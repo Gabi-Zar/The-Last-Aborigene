@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mueyr2kmtf2n"
-path="res://.godot/imported/CelestialResort00.png-a344967a040b31d6091ae6c67e4ebf7a.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://assets/background/CelestialResort00.png"
-dest_files=["res://.godot/imported/CelestialResort00.png-a344967a040b31d6091ae6c67e4ebf7a.ctex"]
 
 [params]
 

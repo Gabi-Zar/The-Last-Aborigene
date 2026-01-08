@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://davpftda47vp0"
-path="res://.godot/imported/ForsakenCity01.png-e7e95675725e404efb9da66fa6613838.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://assets/background/ForsakenCity01.png"
-dest_files=["res://.godot/imported/ForsakenCity01.png-e7e95675725e404efb9da66fa6613838.ctex"]
 
 [params]
 
