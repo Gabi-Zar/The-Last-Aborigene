@@ -7,6 +7,21 @@
 export.cfg
 export_credentials.cfg
 
+*.import
+assets/*.import
+assets/backgrounds/*.import
+assets/music/*.import
+assets/sound_effect/*.import
+assets/mk_16_16_nature_tileset_godot/*.import
+assets/UI/*.import
+assets/UI/Buttons/*.import
+assets/UI/HealthBar/*.import
+assets/UI/Panels/*.import
+assets/diapo/*.import
+assets/diapo/game/*.import
+assets/diapo/scene/*.import
+assets/diapo/software/*.import
+
 # Imported translations (automatically generated from CSV files)
 *.translation
 
