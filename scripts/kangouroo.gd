@@ -10,11 +10,21 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
-	walk()
-	avoid_void()
-	avoid_walls()
-	if randi_range(0,200) == 0:
-		jump()
+	if current_mode == modes[0]:
+		walk()
+		avoid_void()
+		avoid_walls()
+		if randi_range(0,200) == 0:
+			jump()
+		detect_player()
+	
+	if current_mode == modes[1]:
+		follow_player()
+		walk()
+		avoid_void()
+		if Manager.player.global_position.y <= global_position.y - 40:
+			jump()
+	
 	
 	if not is_stopped:
 		move_and_slide()
