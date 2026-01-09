@@ -4,6 +4,8 @@ var hp: int
 var armor: int = 0
 var damage: int = -1
 var loot_table
+var current_mode: String = "idle"
+var modes: Array = ["idle", "chasing"]
 
 var direction: int = 1
 var is_stopped = false
@@ -15,6 +17,7 @@ var speed: int
 @onready var right_wall_detector = $RightWallRayCast2D
 @onready var direction_change_cooldown = $DirectionChangeCooldown
 @onready var animation_player = $AnimationPlayer
+@onready var player_detection_area = $PlayerDetectionArea2D
 
 
 func apply_gravity(delta, gravity = get_gravity()):
@@ -49,3 +52,16 @@ func take_damage(attack_strenght):
 		if hp <= 0:
 			Manager.present_mob_list.erase(self)
 			queue_free()
+
+func follow_player():
+	if Manager.player.global_position.x > global_position.x:
+		direction = 1
+	else:
+		direction = -1
+
+
+func detect_player():
+	if Manager.player in player_detection_area.get_overlapping_bodies():
+		current_mode = modes[1]
+	else:
+		current_mode = modes[0]
