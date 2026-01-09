@@ -3,9 +3,6 @@ extends Control
 @onready var diapo_index = 0
 @onready var diapos = []
 
-const LEFT = 263   # left
-const RIGHT = 262  # right
-
 func _ready():
 	diapos = [
 		$TextureRect1,
@@ -22,9 +19,12 @@ func display_diapo():
 	$LabelDiapo.text = "Diapo %d / %d" % [diapo_index + 1, diapos.size()]
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("Right") and diapo_index < diapos.size() - 1:
+	if Input.is_action_just_pressed("Right") and diapo_index < diapos.size():
 		diapo_index += 1
 		display_diapo()
 	elif Input.is_action_just_pressed("Left") and diapo_index > 0:
 		diapo_index -= 1
 		display_diapo()
+	
+	if diapo_index >= diapos.size():
+		Manager.tree.change_scene_to_file("res://scene/main_menu.tscn")

@@ -1,29 +1,28 @@
-[gd_scene load_steps=26 format=3 uid="uid://ch3qt1lbnyc1q"]
+[gd_scene load_steps=25 format=3 uid="uid://ch3qt1lbnyc1q"]
 
 [ext_resource type="Script" uid="uid://ba673y8fp5o3t" path="res://scripts/main_menu.gd" id="1_3er1b"]
-[ext_resource type="Texture2D" uid="uid://b7fqnco04f1ty" path="res://assets/UI/Buttons/new_game_normal.png" id="2_cht4j"]
+[ext_resource type="Texture2D" uid="uid://bdponh82pdia2" path="res://assets/UI/Buttons/new_game_normal.png" id="2_cht4j"]
 [ext_resource type="AudioStream" uid="uid://dpakgqvnug7o0" path="res://assets/music/53 Silksong.mp3" id="2_r3wny"]
-[ext_resource type="Texture2D" uid="uid://dwwlav0kp4ogq" path="res://assets/UI/Buttons/no_hover.png" id="3_os2d6"]
-[ext_resource type="Texture2D" uid="uid://cgsryfdh5e7sh" path="res://assets/UI/Buttons/new_game_hover.png" id="4_v0h3m"]
-[ext_resource type="Texture2D" uid="uid://h1wchpi7tr15" path="res://assets/UI/Buttons/continue_normal.png" id="5_sra1m"]
-[ext_resource type="Texture2D" uid="uid://biy6rd88yktku" path="res://assets/UI/Buttons/continue_pressed.png" id="6_unisd"]
-[ext_resource type="Texture2D" uid="uid://bbmehu1onvrs6" path="res://assets/UI/Buttons/continue_hover.png" id="7_2nbnt"]
-[ext_resource type="Texture2D" uid="uid://cuy4oodfsuwvh" path="res://assets/UI/Buttons/settings_normal.png" id="8_ceq6q"]
+[ext_resource type="Texture2D" uid="uid://dd1042wgogl0q" path="res://assets/UI/Buttons/new_game_hover.png" id="4_v0h3m"]
+[ext_resource type="Texture2D" uid="uid://be84ad63tsgfi" path="res://assets/UI/Buttons/continue_normal.png" id="5_sra1m"]
+[ext_resource type="Texture2D" uid="uid://ba8e1n6fscgdh" path="res://assets/UI/Buttons/continue_pressed.png" id="6_unisd"]
+[ext_resource type="Texture2D" uid="uid://f50dbj3uis6h" path="res://assets/UI/Buttons/continue_hover.png" id="7_2nbnt"]
+[ext_resource type="Texture2D" uid="uid://berw0bh83dycb" path="res://assets/UI/Buttons/settings_normal.png" id="8_ceq6q"]
 [ext_resource type="Texture2D" uid="uid://dmdtp204f5mfv" path="res://assets/UI/Buttons/settings_pressed.png" id="9_t6h5b"]
-[ext_resource type="Texture2D" uid="uid://b745ei8l8ryhk" path="res://assets/UI/Buttons/settings_hover.png" id="10_s7uu8"]
-[ext_resource type="Texture2D" uid="uid://dbk7g1inylq00" path="res://assets/UI/Buttons/quit_normal.png" id="11_g7f83"]
-[ext_resource type="Texture2D" uid="uid://cdw2ooqas6ch6" path="res://assets/UI/Buttons/quit_pressed.png" id="12_r3wny"]
-[ext_resource type="Texture2D" uid="uid://dsl4jdpt75on4" path="res://assets/UI/Buttons/quit_hover.png" id="13_ruj6x"]
+[ext_resource type="Texture2D" uid="uid://bvfl5ev02fdgj" path="res://assets/UI/Buttons/settings_hover.png" id="10_s7uu8"]
+[ext_resource type="Texture2D" uid="uid://ct0e7x10hxec2" path="res://assets/UI/Buttons/quit_normal.png" id="11_g7f83"]
+[ext_resource type="Texture2D" uid="uid://cv2jiq1g5r0wo" path="res://assets/UI/Buttons/quit_pressed.png" id="12_r3wny"]
+[ext_resource type="Texture2D" uid="uid://bwc6roi4su7ae" path="res://assets/UI/Buttons/quit_hover.png" id="13_ruj6x"]
 [ext_resource type="Script" uid="uid://dal73gnhy2emr" path="res://scripts/main_menu_pop_up.gd" id="14_g7f83"]
-[ext_resource type="Texture2D" uid="uid://dno5n6jx7d2wo" path="res://assets/UI/Panels/Big panel.png" id="14_s7uu8"]
-[ext_resource type="Texture2D" uid="uid://dkf436eoldm3i" path="res://assets/UI/Panels/red_banner.png" id="15_g7f83"]
-[ext_resource type="Texture2D" uid="uid://bs04jkdv8pqqt" path="res://assets/UI/Buttons/yes_normal.png" id="16_r3wny"]
-[ext_resource type="Texture2D" uid="uid://bfhqxyq4h82vx" path="res://assets/UI/Buttons/yes_pressed.png" id="17_ruj6x"]
+[ext_resource type="Texture2D" uid="uid://bup5tmj1umx46" path="res://assets/UI/Panels/Big panel.png" id="14_s7uu8"]
+[ext_resource type="Texture2D" uid="uid://4glbakvgn1wf" path="res://assets/UI/Panels/red_banner.png" id="15_g7f83"]
+[ext_resource type="Texture2D" uid="uid://cybu2by8e5a2h" path="res://assets/UI/Buttons/yes_normal.png" id="16_r3wny"]
+[ext_resource type="Texture2D" uid="uid://h7xoahietkq1" path="res://assets/UI/Buttons/yes_pressed.png" id="17_ruj6x"]
 [ext_resource type="LabelSettings" uid="uid://3avxjuddcbce" path="res://resources/default_banner_label.tres" id="18_ruj6x"]
-[ext_resource type="Texture2D" uid="uid://bs73o5sop68y6" path="res://assets/UI/Buttons/yes_hover.png" id="18_xcvof"]
-[ext_resource type="Texture2D" uid="uid://dkknss1tn5h6q" path="res://assets/UI/Buttons/no_normal.png" id="19_mh7xh"]
-[ext_resource type="Texture2D" uid="uid://cnscuvvu6a76s" path="res://assets/UI/Buttons/no_pressed.png" id="20_0d2hm"]
-[ext_resource type="Texture2D" uid="uid://dwwlav0kp4ogq" path="res://assets/UI/Buttons/no_hover.png" id="21_wwk1p"]
+[ext_resource type="Texture2D" uid="uid://b4l57sbbkxpy7" path="res://assets/UI/Buttons/yes_hover.png" id="18_xcvof"]
+[ext_resource type="Texture2D" uid="uid://yfyooyiprksf" path="res://assets/UI/Buttons/no_normal.png" id="19_mh7xh"]
+[ext_resource type="Texture2D" uid="uid://b4pvykn7gs1il" path="res://assets/UI/Buttons/no_pressed.png" id="20_0d2hm"]
+[ext_resource type="Texture2D" uid="uid://c1p70qoxqumxw" path="res://assets/UI/Buttons/no_hover.png" id="21_wwk1p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3lrx3"]
 font_size = 20
@@ -71,7 +70,7 @@ theme_override_constants/separation = 16
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 texture_normal = ExtResource("2_cht4j")
-texture_pressed = ExtResource("3_os2d6")
+texture_pressed = ExtResource("21_wwk1p")
 texture_hover = ExtResource("4_v0h3m")
 stretch_mode = 5
 
