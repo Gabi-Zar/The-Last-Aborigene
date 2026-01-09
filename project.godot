@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The Last Aborigene"
-run/main_scene="uid://ch3qt1lbnyc1q"
+run/main_scene="uid://dsb2xyptx4lji"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 0)
 config/icon="res://icon.svg"
