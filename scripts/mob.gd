@@ -18,7 +18,7 @@ var speed: int
 @onready var direction_change_cooldown = $DirectionChangeCooldown
 @onready var animation_player = $AnimationPlayer
 @onready var player_detection_area = $PlayerDetectionArea2D
-
+@onready var blood_particles = $BloodGPUParticles2D
 
 func apply_gravity(delta, gravity = get_gravity()):
 	if not is_on_floor():
@@ -49,6 +49,7 @@ func take_damage(attack_strenght):
 	if total_damage > 0:
 		hp -= total_damage
 		animation_player.play("damage")
+		blood_particles.restart()
 		if hp <= 0:
 			Manager.present_mob_list.erase(self)
 			queue_free()

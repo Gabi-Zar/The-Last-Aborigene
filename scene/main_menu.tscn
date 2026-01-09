@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://ch3qt1lbnyc1q"]
+[gd_scene load_steps=26 format=3 uid="uid://ch3qt1lbnyc1q"]
 
 [ext_resource type="Script" uid="uid://ba673y8fp5o3t" path="res://scripts/main_menu.gd" id="1_3er1b"]
 [ext_resource type="Texture2D" uid="uid://bdponh82pdia2" path="res://assets/UI/Buttons/new_game_normal.png" id="2_cht4j"]
 [ext_resource type="AudioStream" uid="uid://dpakgqvnug7o0" path="res://assets/music/53 Silksong.mp3" id="2_r3wny"]
+[ext_resource type="Texture2D" uid="uid://cve5051oxs1ni" path="res://assets/UI/Buttons/new_game_pressed.png" id="4_ruj6x"]
 [ext_resource type="Texture2D" uid="uid://dd1042wgogl0q" path="res://assets/UI/Buttons/new_game_hover.png" id="4_v0h3m"]
 [ext_resource type="Texture2D" uid="uid://be84ad63tsgfi" path="res://assets/UI/Buttons/continue_normal.png" id="5_sra1m"]
 [ext_resource type="Texture2D" uid="uid://ba8e1n6fscgdh" path="res://assets/UI/Buttons/continue_pressed.png" id="6_unisd"]
@@ -70,7 +71,7 @@ theme_override_constants/separation = 16
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 texture_normal = ExtResource("2_cht4j")
-texture_pressed = ExtResource("21_wwk1p")
+texture_pressed = ExtResource("4_ruj6x")
 texture_hover = ExtResource("4_v0h3m")
 stretch_mode = 5
 
