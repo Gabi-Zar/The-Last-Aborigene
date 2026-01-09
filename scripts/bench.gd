@@ -15,8 +15,10 @@ func _process(_delta: float) -> void:
 				Manager.player.position = position
 				Manager.player.can_move = false
 				Manager.player.z_index = -1
+				Manager.player.boomrang_sprite.hide()
 			else:
 				Manager.player.can_move = true
 				Manager.player.z_index = 2
+				Manager.player.boomrang_sprite.show()
 	else:
 		bench_label_animation.play("text_disappear")

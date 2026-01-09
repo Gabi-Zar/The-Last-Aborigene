@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ckreqf83ixejm"]
+[gd_scene load_steps=17 format=3 uid="uid://ckreqf83ixejm"]
 
 [ext_resource type="Script" uid="uid://dbusxxx3fd5ef" path="res://scripts/player.gd" id="1_xo3ru"]
 [ext_resource type="PackedScene" uid="uid://235ddrv6g1dw" path="res://scene/boomrang.tscn" id="2_s4jxa"]
@@ -9,12 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://dxo6y0ykbxsvl" path="res://assets/aborigene_right1.png" id="6_ml7e8"]
 [ext_resource type="Texture2D" uid="uid://du3lohhdyyqov" path="res://assets/aborigene_right2.png" id="7_ihjo1"]
 [ext_resource type="Texture2D" uid="uid://co8ijh2n6rtiy" path="res://assets/aborigene_right3.png" id="8_dk1vr"]
+[ext_resource type="AudioStream" uid="uid://bv3bncrfh3hv1" path="res://assets/sound_effect/damage.mp3" id="10_ml7e8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvtld"]
-size = Vector2(134, 144)
+size = Vector2(105, 113)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4jxa"]
-size = Vector2(136, 146)
+size = Vector2(107, 115)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fvtld"]
 animations = [{
@@ -116,13 +117,13 @@ boomrang = ExtResource("2_s4jxa")
 process_callback = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 10)
+position = Vector2(-4.5, 19.5)
 shape = SubResource("RectangleShape2D_fvtld")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 10)
+position = Vector2(-4.5, 19.5)
 shape = SubResource("RectangleShape2D_s4jxa")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
@@ -133,7 +134,7 @@ polygon = PackedVector2Array(-16, -32, 16, -32, 16, 32, -16, 32)
 position = Vector2(-1, 10)
 scale = Vector2(3.4358976, 3.4358978)
 sprite_frames = SubResource("SpriteFrames_fvtld")
-animation = &"right"
+animation = &"left"
 
 [node name="BoomrangSprite2D" type="Sprite2D" parent="."]
 position = Vector2(51, -57.000004)
@@ -144,3 +145,6 @@ texture = ExtResource("4_ct4mp")
 libraries = {
 &"": SubResource("AnimationLibrary_hp4bs")
 }
+
+[node name="DamageAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ml7e8")

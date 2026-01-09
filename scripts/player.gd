@@ -27,6 +27,7 @@ var boomrang_instance: Node
 @onready var boomrang_sprite = $BoomrangSprite2D
 @onready var collision_area = $Area2D
 @onready var animation_player = $AnimationPlayer
+@onready var damage_audio_player = $DamageAudioStreamPlayer
 
 func _ready() -> void:
 	dash_cooldown.wait_time = 1
@@ -124,6 +125,7 @@ func _physics_process(delta: float) -> void:
 			if mob in collision_area.get_overlapping_bodies():
 				update_health(mob.damage)
 				animation_player.play("damage")
+				damage_audio_player.play()
 				# SHAKE SCREEN TO DO
 				damage_cooldown.start()
 
