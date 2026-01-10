@@ -6,6 +6,7 @@ var direction = 1
 var return_timer = Timer.new()
 var despawn_timer = Timer.new()
 var strenght: int
+var is_down_hit := false
 
 func _ready() -> void:
 	return_timer.wait_time = 0.2
@@ -32,6 +33,8 @@ func _physics_process(_delta: float) -> void:
 		for mob in Manager.present_mob_list:
 			if mob in boomrang_area.get_overlapping_bodies():
 				mob.take_damage(strenght)
+				if is_down_hit:
+					Manager.player.velocity.y = -650
 		if boomrang_area.get_overlapping_bodies():
 			Manager.player.boomrang_cooldown = false
 			queue_free()
