@@ -148,3 +148,4 @@ libraries = {
 
 [node name="DamageAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_ml7e8")
+volume_db = -10.0

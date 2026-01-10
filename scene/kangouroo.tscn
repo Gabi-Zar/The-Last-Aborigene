@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bn1sl6myadd5p"]
+[gd_scene load_steps=11 format=3 uid="uid://bn1sl6myadd5p"]
 
 [ext_resource type="Script" uid="uid://dtvwvccoubixn" path="res://scripts/kangouroo.gd" id="1_huifm"]
 [ext_resource type="Texture2D" uid="uid://bpm7opdmauh4i" path="res://assets/place_holder_block.png" id="2_lougi"]
 [ext_resource type="Texture2D" uid="uid://cqggbv2wsiv7i" path="res://assets/collectible_texture.png" id="3_lougi"]
+[ext_resource type="AudioStream" uid="uid://clwad057l0yc4" path="res://assets/sound_effect/ennemis_damage.mp3" id="4_e6mr8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08lxr"]
 size = Vector2(64, 128)
@@ -99,3 +100,7 @@ lifetime = 0.5
 one_shot = true
 explosiveness = 0.8
 process_material = SubResource("ParticleProcessMaterial_e6mr8")
+
+[node name="DamageAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_e6mr8")
+volume_db = -10.0
