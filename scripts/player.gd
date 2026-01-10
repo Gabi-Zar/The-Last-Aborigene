@@ -102,14 +102,43 @@ func _physics_process(delta: float) -> void:
 			boomrang_instance = boomrang.instantiate()
 			boomrang_instance.position = position + boomrang_sprite.position
 			boomrang_instance.rotation = boomrang_sprite.rotation
-			if boomrang_instance.rotation == 0.0:
+			if Input.is_action_pressed("Up"):
+				if boomrang_instance.rotation == 0.0:
+					boomrang_instance.direction = 1
+				else:
+					boomrang_instance.direction = -1
+				
+				if Input.is_action_pressed("Left"):
+					boomrang_instance.apply_impulse(Vector2(-1000, -1000))
+				elif Input.is_action_pressed("Right"):
+					boomrang_instance.apply_impulse(Vector2(1000, -1000))
+				else:
+					boomrang_instance.apply_impulse(Vector2(0, -1500))
+			
+			elif Input.is_action_pressed("Down"):
+				if boomrang_instance.rotation == 0.0:
+					boomrang_instance.direction = 1
+				else:
+					boomrang_instance.direction = -1
+				
+				if Input.is_action_pressed("Left"):
+					boomrang_instance.apply_impulse(Vector2(-1000, 1000))
+				elif Input.is_action_pressed("Right"):
+					boomrang_instance.apply_impulse(Vector2(1000, 1000))
+				else:
+					boomrang_instance.apply_impulse(Vector2(0, 1500))
+				
+				boomrang_instance.is_down_hit = true
+			
+			elif boomrang_instance.rotation == 0.0:
 				boomrang_instance.direction = 1
 				boomrang_instance.apply_impulse(Vector2(-1500, -50))
+			
 			else:
 				boomrang_instance.direction = -1
 				boomrang_instance.apply_impulse(Vector2(1500, -50))
-			Manager.main.add_child(boomrang_instance)
 			
+			Manager.main.add_child(boomrang_instance)
 			boomrang_sprite.hide()
 			boomrang_cooldown = true
 	
