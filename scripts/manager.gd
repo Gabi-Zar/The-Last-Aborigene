@@ -11,6 +11,8 @@ var main : Node
 var player : Node
 var terrain : Node
 var hud : Node
+var cinematic : Node
+var cinematic_camera : Node
 
 var is_main_scene_loaded = false
 var save_cooldown = 0.0
@@ -45,6 +47,8 @@ func main_scene_loaded():
 	player = root.get_node("Main/Player")
 	terrain = root.get_node("Main/Terrain")
 	hud = root.get_node("Main/HUD/Control/HUD")
+	cinematic = root.get_node("Main/Cinematic")
+	cinematic_camera = root.get_node("Main/Cinematic/Camera2D")
 	
 	print(load_game())
 	var save_data = load_game()
@@ -53,6 +57,8 @@ func main_scene_loaded():
 		last_bench_position = save_data[0]
 		is_dash_unlocked = save_data[1]
 		is_double_jump_unlocked = save_data[2]
+	else:
+		cinematic_camera.make_current()
 	
 	is_main_scene_loaded = true
 

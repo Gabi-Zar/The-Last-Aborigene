@@ -28,6 +28,7 @@ var boomrang_instance: Node
 @onready var collision_area = $Area2D
 @onready var animation_player = $AnimationPlayer
 @onready var damage_audio_player = $DamageAudioStreamPlayer
+@onready var camera = $Camera2D
 
 func _ready() -> void:
 	dash_cooldown.wait_time = 1
