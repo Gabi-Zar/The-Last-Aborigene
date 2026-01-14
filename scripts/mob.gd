@@ -20,6 +20,7 @@ var speed: int
 @onready var player_detection_area = $PlayerDetectionArea2D
 @onready var blood_particles = $BloodGPUParticles2D
 @onready var damage_audio_player = $DamageAudioStreamPlayer2D
+@onready var sprite = $Sprite2D
 
 func apply_gravity(delta, gravity = get_gravity()):
 	if not is_on_floor():
@@ -39,6 +40,12 @@ func avoid_walls():
 		if direction_change_cooldown.is_stopped():
 			direction *= -1
 			direction_change_cooldown.start()
+
+func turn_sprite():
+	if direction == 1:
+		sprite.play("right")
+	elif direction == -1:
+		sprite.play("left")
 
 func jump(jump_velocity = 300):
 	if is_on_floor():
