@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://xp3d5bmj7gjh" path="res://assets/background/background.png" id="2_tqoya"]
 [ext_resource type="PackedScene" uid="uid://b6a7xqfik03wk" path="res://scene/collectible.tscn" id="2_wp4xf"]
 [ext_resource type="Texture2D" uid="uid://d2kyhwmlgcg47" path="res://assets/background/degrade.png" id="3_wscrc"]
-[ext_resource type="Texture2D" uid="uid://xyew7lu7duvq" path="res://assets/tileset/terrain.png" id="5_tqoya"]
+[ext_resource type="Texture2D" uid="uid://gl4l6a7540a8" path="res://assets/tileset/terrain.png" id="5_tqoya"]
 [ext_resource type="PackedScene" uid="uid://da5umeedxk31x" path="res://scene/hud.tscn" id="7_p1hux"]
 [ext_resource type="PackedScene" uid="uid://bn1sl6myadd5p" path="res://scene/kangouroo.tscn" id="8_of57s"]
 [ext_resource type="PackedScene" uid="uid://dtg748uoioata" path="res://scene/tente.tscn" id="9_b5f6u"]
@@ -18,11 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://du3lohhdyyqov" path="res://assets/aborigene_right2.png" id="16_gn2wi"]
 [ext_resource type="Texture2D" uid="uid://co8ijh2n6rtiy" path="res://assets/aborigene_right3.png" id="17_p8adh"]
 [ext_resource type="Texture2D" uid="uid://cjbvy6nqj5xlk" path="res://assets/speesh_bubbles/Question Mark.png" id="18_gtqqq"]
-[ext_resource type="Texture2D" uid="uid://bcxgoe4mwkj4h" path="res://assets/neutral Face.png" id="18_oldxj"]
+[ext_resource type="Texture2D" uid="uid://dlke31qmpou41" path="res://assets/neutral Face.png" id="18_oldxj"]
 [ext_resource type="Texture2D" uid="uid://dgxrgm5qdk5k4" path="res://assets/speesh_bubbles/Happy Face.png" id="19_0d4pv"]
-[ext_resource type="Texture2D" uid="uid://bpm7opdmauh4i" path="res://assets/place_holder_block.png" id="19_4jm02"]
 [ext_resource type="Texture2D" uid="uid://dhfno2jx6xlnu" path="res://assets/speesh_bubbles/heart Face.png" id="20_gtqqq"]
 [ext_resource type="Texture2D" uid="uid://cqggbv2wsiv7i" path="res://assets/collectible_texture.png" id="20_vneqc"]
+[ext_resource type="Texture2D" uid="uid://lw8g6si8s6yd" path="res://assets/boat.png" id="22_gn2wi"]
 [ext_resource type="AudioStream" uid="uid://c85xrl1a5ddkm" path="res://assets/music/63. The Reacher - Entre les Marais et les Cimes.mp3" id="24_gn2wi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k65ib"]
@@ -1667,6 +1667,18 @@ tracks/14/keys = {
 "update": 0,
 "values": [Vector2(0.4, 0.4)]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Boat:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_216wm"]
 resource_name = "cimatic"
@@ -1678,10 +1690,10 @@ tracks/0/path = NodePath("Boat:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 15),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 12, 13),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-5000, -90), Vector2(-1208, -80)]
+"values": [Vector2(-5000, -250), Vector2(-1208, -250), Vector2(-800, -250)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1851,6 +1863,18 @@ tracks/14/keys = {
 "update": 0,
 "values": [Vector2(0.65, 0.65), Vector2(0.7, 0.7)]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Boat:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(12, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.08726646]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vc5kc"]
 _data = {
@@ -1990,10 +2014,10 @@ autoplay = "default"
 flip_h = true
 
 [node name="Boat" type="Sprite2D" parent="Cinematic"]
-self_modulate = Color(0.3372549, 0.27058825, 0, 1)
+z_index = -10
 position = Vector2(-3052, -89.99999)
-scale = Vector2(27.750006, 11.375)
-texture = ExtResource("19_4jm02")
+scale = Vector2(20, 20)
+texture = ExtResource("22_gn2wi")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Cinematic/Boat"]
 position = Vector2(15.711709, 13.538461)
@@ -2009,3 +2033,4 @@ autoplay = "cimatic"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Cinematic"]
 stream = ExtResource("24_gn2wi")
+autoplay = true
