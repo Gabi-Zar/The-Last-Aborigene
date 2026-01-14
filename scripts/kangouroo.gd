@@ -17,6 +17,7 @@ func _physics_process(delta: float) -> void:
 	if current_mode == modes[0]:
 		walk()
 		avoid_walls()
+		turn_sprite()
 	
 	if current_mode == modes[1]:
 		if randi_range(0,20) == 0:
@@ -26,6 +27,11 @@ func _physics_process(delta: float) -> void:
 		if Manager.player.global_position.y <= global_position.y - 40:
 			if randi_range(0,9) == 0:
 				jump()
+		
+		if direction == 1:
+			sprite.play("right_red_eye")
+		elif direction == -1:
+			sprite.play("left_red_eye")
 	
 	
 	if not is_stopped:

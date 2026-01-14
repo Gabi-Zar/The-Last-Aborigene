@@ -19,7 +19,7 @@ var save_cooldown = 0.0
 
 var is_dash_unlocked := false
 var is_double_jump_unlocked := false
-var last_bench_position := Vector2(0.0, -24.0)
+var last_bench_position := Vector2(2008.0, -96.0)
 var present_mob_list = []
 
 # Called when the node enters the scene tree for the first time.

@@ -1,12 +1,50 @@
-[gd_scene load_steps=11 format=3 uid="uid://bn1sl6myadd5p"]
+[gd_scene load_steps=15 format=3 uid="uid://bn1sl6myadd5p"]
 
 [ext_resource type="Script" uid="uid://dtvwvccoubixn" path="res://scripts/kangouroo.gd" id="1_huifm"]
-[ext_resource type="Texture2D" uid="uid://bpm7opdmauh4i" path="res://assets/place_holder_block.png" id="2_lougi"]
+[ext_resource type="Texture2D" uid="uid://d3y1j445kudnu" path="res://assets/kangourou_left.png" id="2_7g7sf"]
 [ext_resource type="Texture2D" uid="uid://cqggbv2wsiv7i" path="res://assets/collectible_texture.png" id="3_lougi"]
+[ext_resource type="Texture2D" uid="uid://c8ffn6rg061fl" path="res://assets/kangourou_left_red_eyes.png" id="3_xi28e"]
+[ext_resource type="Texture2D" uid="uid://bpyybwmbr6fde" path="res://assets/kangourou_right.png" id="4_7g7sf"]
 [ext_resource type="AudioStream" uid="uid://clwad057l0yc4" path="res://assets/sound_effect/ennemis_damage.mp3" id="4_e6mr8"]
+[ext_resource type="Texture2D" uid="uid://cfyjafaunpthx" path="res://assets/kangourou_right_red_eyes.png" id="5_xi28e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y2ocr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7g7sf")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xi28e")
+}],
+"loop": true,
+"name": &"left_red_eye",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7g7sf")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xi28e")
+}],
+"loop": true,
+"name": &"right_red_eye",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08lxr"]
-size = Vector2(64, 128)
+size = Vector2(81, 184)
 
 [sub_resource type="Animation" id="Animation_lougi"]
 length = 0.001
@@ -46,7 +84,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_huifm"]
-radius = 399.02005
+radius = 576.49976
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e6mr8"]
 particle_flag_disable_z = true
@@ -61,20 +99,22 @@ scale_max = 0.5
 script = ExtResource("1_huifm")
 
 [node name="LeftWallRayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(-72, 0)
+target_position = Vector2(-64, 0)
 
 [node name="RightWallRayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(72, 0)
 
 [node name="FloorRayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 72)
+target_position = Vector2(0, 104)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1.9073486e-06, 1.9073486e-06)
 scale = Vector2(4, 4)
-texture = ExtResource("2_lougi")
+sprite_frames = SubResource("SpriteFrames_y2ocr")
+animation = &"right_red_eye"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.5, 0)
 shape = SubResource("RectangleShape2D_08lxr")
 
 [node name="DirectionChangeCooldown" type="Timer" parent="."]
