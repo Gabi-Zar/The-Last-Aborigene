@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=4 uid="uid://bbr8mad1hk27x"]
+[gd_scene load_steps=72 format=4 uid="uid://bbr8mad1hk27x"]
 
 [ext_resource type="AudioStream" uid="uid://co0pr2ifkxr4d" path="res://assets/music/52 Sister of the Void.mp3" id="1_0ha60"]
 [ext_resource type="Script" uid="uid://864ouwvfm0y0" path="res://scripts/main.gd" id="1_4j5ol"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://xp3d5bmj7gjh" path="res://assets/background/background.png" id="2_tqoya"]
 [ext_resource type="PackedScene" uid="uid://b6a7xqfik03wk" path="res://scene/collectible.tscn" id="2_wp4xf"]
 [ext_resource type="Texture2D" uid="uid://d2kyhwmlgcg47" path="res://assets/background/degrade.png" id="3_wscrc"]
-[ext_resource type="Texture2D" uid="uid://xyew7lu7duvq" path="res://assets/tileset/terrain.png" id="5_tqoya"]
+[ext_resource type="Texture2D" uid="uid://gl4l6a7540a8" path="res://assets/tileset/terrain.png" id="5_tqoya"]
 [ext_resource type="PackedScene" uid="uid://da5umeedxk31x" path="res://scene/hud.tscn" id="7_p1hux"]
 [ext_resource type="PackedScene" uid="uid://bn1sl6myadd5p" path="res://scene/kangouroo.tscn" id="8_of57s"]
 [ext_resource type="PackedScene" uid="uid://dtg748uoioata" path="res://scene/tente.tscn" id="9_b5f6u"]
@@ -18,12 +18,14 @@
 [ext_resource type="Texture2D" uid="uid://du3lohhdyyqov" path="res://assets/aborigene_right2.png" id="16_gn2wi"]
 [ext_resource type="Texture2D" uid="uid://co8ijh2n6rtiy" path="res://assets/aborigene_right3.png" id="17_p8adh"]
 [ext_resource type="Texture2D" uid="uid://cjbvy6nqj5xlk" path="res://assets/speesh_bubbles/Question Mark.png" id="18_gtqqq"]
-[ext_resource type="Texture2D" uid="uid://bcxgoe4mwkj4h" path="res://assets/neutral Face.png" id="18_oldxj"]
+[ext_resource type="Texture2D" uid="uid://dlke31qmpou41" path="res://assets/neutral Face.png" id="18_oldxj"]
 [ext_resource type="Texture2D" uid="uid://dgxrgm5qdk5k4" path="res://assets/speesh_bubbles/Happy Face.png" id="19_0d4pv"]
 [ext_resource type="Texture2D" uid="uid://dhfno2jx6xlnu" path="res://assets/speesh_bubbles/heart Face.png" id="20_gtqqq"]
 [ext_resource type="Texture2D" uid="uid://cqggbv2wsiv7i" path="res://assets/collectible_texture.png" id="20_vneqc"]
 [ext_resource type="Texture2D" uid="uid://lw8g6si8s6yd" path="res://assets/boat.png" id="22_gn2wi"]
 [ext_resource type="AudioStream" uid="uid://c85xrl1a5ddkm" path="res://assets/music/63. The Reacher - Entre les Marais et les Cimes.mp3" id="24_gn2wi"]
+[ext_resource type="Texture2D" uid="uid://q8mqx1tmy2qq" path="res://assets/pirate.png" id="24_oldxj"]
+[ext_resource type="Texture2D" uid="uid://bpm7opdmauh4i" path="res://assets/place_holder_block.png" id="24_p8adh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k65ib"]
 resource_name = "terrain"
@@ -1679,10 +1681,46 @@ tracks/15/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Boat/GPUParticles2D:emitting")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Boat/Pirate:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5.306679, 7.039294)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Boat/Pirate:rotation")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_216wm"]
 resource_name = "cimatic"
-length = 60.0
+length = 20.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1846,10 +1884,10 @@ tracks/13/path = NodePath("Camera2D:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 7),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 7, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [Vector2(1467, -218), Vector2(-1971, -189)]
+"values": [Vector2(1467, -218), Vector2(-1971, -189), Vector2(-520, -189)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -1874,6 +1912,42 @@ tracks/15/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -0.08726646]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Boat/GPUParticles2D:emitting")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 12.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Boat/Pirate:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(13, 13.2, 13.4, 13.6, 13.8, 14, 14.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(5.306679, 7.039294), Vector2(9.839319, 3.4205694), Vector2(15.548742, 2.4143496), Vector2(19.012415, 5.2771215), Vector2(21.102594, 8.923166), Vector2(21.775705, 13.850582), Vector2(21.775705, 13.850582)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Boat/Pirate:rotation")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(13, 13.2, 14.5, 14.6, 14.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.08726646, 0.08726646, 0.0, 0.08726646]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vc5kc"]
@@ -1901,6 +1975,7 @@ scale = Vector2(120.87415, -39.777145)
 scroll_scale = Vector2(0.1, 0.1)
 
 [node name="TextureRect" type="TextureRect" parent="Background/Parallax2D"]
+z_index = -10
 offset_left = -47584.0
 offset_top = -43800.0
 offset_right = 52416.0
@@ -2020,10 +2095,21 @@ scale = Vector2(20, 20)
 texture = ExtResource("22_gn2wi")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Cinematic/Boat"]
-position = Vector2(15.711709, 13.538461)
+position = Vector2(10.5, 15.599999)
+emitting = false
 amount = 20
 texture = ExtResource("20_vneqc")
 process_material = SubResource("ParticleProcessMaterial_kpobt")
+
+[node name="Pirate" type="Sprite2D" parent="Cinematic/Boat"]
+position = Vector2(5.306679, 7.039294)
+scale = Vector2(0.15721415, 0.15703127)
+texture = ExtResource("24_oldxj")
+
+[node name="Pirate2" type="Sprite2D" parent="Cinematic/Boat"]
+position = Vector2(-2.9231257, 7.021953)
+scale = Vector2(0.15721415, 0.24804953)
+texture = ExtResource("24_p8adh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cinematic"]
 libraries = {

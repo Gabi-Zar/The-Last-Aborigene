@@ -12,6 +12,7 @@ var player : Node
 var terrain : Node
 var hud : Node
 var cinematic : Node
+var cinematic_animation_player: Node
 var cinematic_camera : Node
 
 var is_main_scene_loaded = false
@@ -35,6 +36,10 @@ func _process(delta: float) -> void:
 	else:
 		save_cooldown += delta
 	
+	if is_main_scene_loaded:
+		if cinematic_animation_player.is_playing():
+			print("cinematic")
+	
 	if Input.is_action_just_pressed("ToggleFullscreen"):
 		if window.get_mode() == Window.MODE_FULLSCREEN:
 			window.set_mode(Window.MODE_WINDOWED)
@@ -48,6 +53,7 @@ func main_scene_loaded():
 	terrain = root.get_node("Main/Terrain")
 	hud = root.get_node("Main/HUD/Control/HUD")
 	cinematic = root.get_node("Main/Cinematic")
+	cinematic_animation_player = root.get_node("Main/Cinematic/AnimationPlayer")
 	cinematic_camera = root.get_node("Main/Cinematic/Camera2D")
 	
 	print(load_game())
