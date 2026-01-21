@@ -25,7 +25,7 @@ var present_mob_list = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	window.exclude_from_capture = false
+	window.exclude_from_capture = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
