@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=4 uid="uid://bbr8mad1hk27x"]
+[gd_scene load_steps=91 format=4 uid="uid://bbr8mad1hk27x"]
 
 [ext_resource type="AudioStream" uid="uid://co0pr2ifkxr4d" path="res://assets/music/52 Sister of the Void.mp3" id="1_0ha60"]
 [ext_resource type="Script" uid="uid://864ouwvfm0y0" path="res://scripts/main.gd" id="1_4j5ol"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://xp3d5bmj7gjh" path="res://assets/background/background.png" id="2_tqoya"]
 [ext_resource type="PackedScene" uid="uid://b6a7xqfik03wk" path="res://scene/collectible.tscn" id="2_wp4xf"]
 [ext_resource type="Texture2D" uid="uid://d2kyhwmlgcg47" path="res://assets/background/degrade.png" id="3_wscrc"]
-[ext_resource type="Texture2D" uid="uid://gl4l6a7540a8" path="res://assets/tileset/terrain.png" id="5_tqoya"]
+[ext_resource type="Texture2D" uid="uid://xyew7lu7duvq" path="res://assets/tileset/terrain.png" id="5_tqoya"]
 [ext_resource type="PackedScene" uid="uid://da5umeedxk31x" path="res://scene/hud.tscn" id="7_p1hux"]
 [ext_resource type="PackedScene" uid="uid://bn1sl6myadd5p" path="res://scene/kangouroo.tscn" id="8_of57s"]
 [ext_resource type="PackedScene" uid="uid://dtg748uoioata" path="res://scene/tente.tscn" id="9_b5f6u"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://co8ijh2n6rtiy" path="res://assets/aborigene_right3.png" id="17_p8adh"]
 [ext_resource type="Texture2D" uid="uid://da3g6kafjia5" path="res://assets/speesh_bubbles/Exclamation Mark.png" id="18_4jm02"]
 [ext_resource type="Texture2D" uid="uid://cjbvy6nqj5xlk" path="res://assets/speesh_bubbles/Question Mark.png" id="18_gtqqq"]
-[ext_resource type="Texture2D" uid="uid://dlke31qmpou41" path="res://assets/neutral Face.png" id="18_oldxj"]
+[ext_resource type="Texture2D" uid="uid://bcxgoe4mwkj4h" path="res://assets/neutral Face.png" id="18_oldxj"]
 [ext_resource type="Texture2D" uid="uid://dgxrgm5qdk5k4" path="res://assets/speesh_bubbles/Happy Face.png" id="19_0d4pv"]
 [ext_resource type="Texture2D" uid="uid://dhfno2jx6xlnu" path="res://assets/speesh_bubbles/heart Face.png" id="20_gtqqq"]
 [ext_resource type="Texture2D" uid="uid://cqggbv2wsiv7i" path="res://assets/collectible_texture.png" id="20_vneqc"]
@@ -27,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://c85xrl1a5ddkm" path="res://assets/music/63. The Reacher - Entre les Marais et les Cimes.mp3" id="24_gn2wi"]
 [ext_resource type="Texture2D" uid="uid://q8mqx1tmy2qq" path="res://assets/pirate.png" id="24_oldxj"]
 [ext_resource type="Texture2D" uid="uid://b73hcu0h6q7r1" path="res://assets/cook.png" id="25_oldxj"]
+[ext_resource type="AudioStream" uid="uid://cgh3yhduy20o1" path="res://assets/sound_effect/aaaahahahhhahhhah.mp3" id="28_vneqc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k65ib"]
 resource_name = "terrain"
@@ -1159,6 +1160,22 @@ texture = ExtResource("5_tqoya")
 12:14/0/z_index = 7
 12:15/0 = 0
 12:15/0/z_index = 7
+14:14/0 = 0
+14:15/0 = 0
+15:15/0 = 0
+15:16/0 = 0
+16:16/0 = 0
+16:17/0 = 0
+17:17/0 = 0
+15:17/0 = 0
+14:17/0 = 0
+14:16/0 = 0
+17:16/0 = 0
+17:15/0 = 0
+16:14/0 = 0
+15:14/0 = 0
+16:15/0 = 0
+17:14/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_gtqqq"]
 physics_layer_0/collision_layer = 1
@@ -1956,10 +1973,94 @@ tracks/26/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("Abo1:animation")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"left"]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Abo3:animation")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"left"]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Abo1:position")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(752, -64)]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("Abo2:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1312, -64)]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Abo3:position")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1480, -64.00001)]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("Abo4:position")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2424, -72.00001)]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("AudioStreamPlayer2:playing")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_216wm"]
 resource_name = "cimatic"
-length = 20.0
+length = 17.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1979,10 +2080,10 @@ tracks/1/path = NodePath("Abo2:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 15.5, 15.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [&"right", &"left"]
+"values": [&"right", &"left", &"left", &"right"]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1991,10 +2092,10 @@ tracks/2/path = NodePath("Abo4:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 5, 15.5, 15.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [&"right", &"left"]
+"values": [&"right", &"left", &"left", &"right"]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -2123,10 +2224,10 @@ tracks/13/path = NodePath("Camera2D:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 7, 12, 15),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(1467, -218), Vector2(-1971, -189), Vector2(-520, -189), Vector2(1467, -218)]
+"times": PackedFloat32Array(0, 6.99, 7, 12, 14.99, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1467, -218), Vector2(1467, -218), Vector2(-1971, -189), Vector2(-520, -189), Vector2(-520, -189), Vector2(1467, -218)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -2284,6 +2385,90 @@ tracks/26/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("Abo1:animation")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(15.5, 15.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"left", &"right"]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Abo3:animation")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(15.5, 15.65),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"left", &"right"]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Abo1:position")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(15.5, 15.7, 17.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(752, -64), Vector2(568, -64), Vector2(3055.9998, -64)]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("Abo2:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(15.5, 15.8, 17.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1312, -64), Vector2(920, -64), Vector2(3055.9998, -64)]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Abo3:position")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(15.5, 15.65, 17),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1480, -64.00001), Vector2(1392, -64.00001), Vector2(3064, -64.00001)]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("Abo4:position")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(15.5, 15.75, 16.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2424, -72.00001), Vector2(2112, -72.00001), Vector2(3096, -64.00001)]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("AudioStreamPlayer2:playing")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0, 13.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vc5kc"]
 _data = {
@@ -2325,6 +2510,16 @@ offset_left = -10000.0
 offset_top = 64.0
 offset_right = 10000.0
 offset_bottom = 1472.0
+texture = ExtResource("3_wscrc")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Background"]
+z_index = 20
+offset_left = -768.0388
+offset_top = 62.758373
+offset_right = 641.24084
+offset_bottom = 4735.7603
+rotation = 1.5707964
 texture = ExtResource("3_wscrc")
 expand_mode = 1
 
@@ -2470,4 +2665,9 @@ autoplay = "cimatic"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Cinematic"]
 stream = ExtResource("24_gn2wi")
+volume_db = -10.0
 autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Cinematic"]
+stream = ExtResource("28_vneqc")
+volume_db = 10.0

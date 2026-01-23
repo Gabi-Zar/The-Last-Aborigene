@@ -9,6 +9,7 @@ const SAVE_PATH = "user://Team Frank/The Last Aborigene/"
 @onready var window = get_window()
 var main : Node
 var player : Node
+var player_camera : Node
 var terrain : Node
 var hud : Node
 var cinematic : Node
@@ -37,8 +38,9 @@ func _process(delta: float) -> void:
 		save_cooldown += delta
 	
 	if is_main_scene_loaded:
-		if cinematic_animation_player.is_playing():
-			print("cinematic")
+		if not cinematic_animation_player.is_playing():
+			player_camera.make_current()
+			
 	
 	if Input.is_action_just_pressed("ToggleFullscreen"):
 		if window.get_mode() == Window.MODE_FULLSCREEN:
@@ -50,6 +52,7 @@ func _process(delta: float) -> void:
 func main_scene_loaded():
 	main = root.get_node("Main")
 	player = root.get_node("Main/Player")
+	player_camera = root.get_node("Main/Player/Camera2D")
 	terrain = root.get_node("Main/Terrain")
 	hud = root.get_node("Main/HUD/Control/HUD")
 	cinematic = root.get_node("Main/Cinematic")
