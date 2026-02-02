@@ -1,12 +1,12 @@
 [gd_scene load_steps=20 format=3 uid="uid://da5umeedxk31x"]
 
 [ext_resource type="Script" uid="uid://bp170m3jd5j1s" path="res://scripts/hud.gd" id="1_qy82l"]
-[ext_resource type="Texture2D" uid="uid://h1wchpi7tr15" path="res://assets/UI/Buttons/continue_normal.png" id="2_sjh6b"]
-[ext_resource type="Texture2D" uid="uid://biy6rd88yktku" path="res://assets/UI/Buttons/continue_pressed.png" id="3_xphas"]
-[ext_resource type="Texture2D" uid="uid://bbmehu1onvrs6" path="res://assets/UI/Buttons/continue_hover.png" id="4_kc6cu"]
-[ext_resource type="Texture2D" uid="uid://dbk7g1inylq00" path="res://assets/UI/Buttons/quit_normal.png" id="5_62he3"]
-[ext_resource type="Texture2D" uid="uid://cdw2ooqas6ch6" path="res://assets/UI/Buttons/quit_pressed.png" id="6_b48p2"]
-[ext_resource type="Texture2D" uid="uid://dsl4jdpt75on4" path="res://assets/UI/Buttons/quit_hover.png" id="7_086as"]
+[ext_resource type="Texture2D" uid="uid://be84ad63tsgfi" path="res://assets/UI/Buttons/continue_normal.png" id="2_sjh6b"]
+[ext_resource type="Texture2D" uid="uid://ba8e1n6fscgdh" path="res://assets/UI/Buttons/continue_pressed.png" id="3_xphas"]
+[ext_resource type="Texture2D" uid="uid://f50dbj3uis6h" path="res://assets/UI/Buttons/continue_hover.png" id="4_kc6cu"]
+[ext_resource type="Texture2D" uid="uid://ct0e7x10hxec2" path="res://assets/UI/Buttons/quit_normal.png" id="5_62he3"]
+[ext_resource type="Texture2D" uid="uid://cv2jiq1g5r0wo" path="res://assets/UI/Buttons/quit_pressed.png" id="6_b48p2"]
+[ext_resource type="Texture2D" uid="uid://bwc6roi4su7ae" path="res://assets/UI/Buttons/quit_hover.png" id="7_086as"]
 [ext_resource type="Texture2D" uid="uid://bjo2pc2vio4e2" path="res://assets/UI/HealthBar/empty.png" id="8_xphas"]
 [ext_resource type="Texture2D" uid="uid://v0rek4n1mvyn" path="res://assets/UI/HealthBar/full.png" id="9_kc6cu"]
 [ext_resource type="Texture2D" uid="uid://cpgqfr3k2nf86" path="res://assets/UI/vignette.png" id="10_086as"]
@@ -252,7 +252,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="FadeInOut" type="Control" parent="Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

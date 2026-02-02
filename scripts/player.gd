@@ -154,12 +154,11 @@ func _physics_process(delta: float) -> void:
 		for mob in Manager.present_mob_list:
 			if mob in collision_area.get_overlapping_bodies():
 				update_health(mob.damage)
-				animation_player.play("damage")
-				damage_audio_player.play()
-				# SHAKE SCREEN TO DO
 				damage_cooldown.start()
 
 
 func update_health(life = 1):
 	Manager.hud.get_node("HealthBar").value += life
 	health += life
+	animation_player.play("damage")
+	damage_audio_player.play()

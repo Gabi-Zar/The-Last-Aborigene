@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=4 uid="uid://bbr8mad1hk27x"]
+[gd_scene load_steps=92 format=4 uid="uid://bbr8mad1hk27x"]
 
 [ext_resource type="AudioStream" uid="uid://co0pr2ifkxr4d" path="res://assets/music/52 Sister of the Void.mp3" id="1_0ha60"]
 [ext_resource type="Script" uid="uid://864ouwvfm0y0" path="res://scripts/main.gd" id="1_4j5ol"]
@@ -25,9 +25,10 @@
 [ext_resource type="Texture2D" uid="uid://cqggbv2wsiv7i" path="res://assets/collectible_texture.png" id="20_vneqc"]
 [ext_resource type="Texture2D" uid="uid://lw8g6si8s6yd" path="res://assets/boat.png" id="22_gn2wi"]
 [ext_resource type="AudioStream" uid="uid://c85xrl1a5ddkm" path="res://assets/music/63. The Reacher - Entre les Marais et les Cimes.mp3" id="24_gn2wi"]
-[ext_resource type="Texture2D" uid="uid://q8mqx1tmy2qq" path="res://assets/pirate.png" id="24_oldxj"]
+[ext_resource type="Texture2D" uid="uid://q8mqx1tmy2qq" path="res://assets/pirate_right.png" id="24_oldxj"]
 [ext_resource type="Texture2D" uid="uid://b73hcu0h6q7r1" path="res://assets/cook.png" id="25_oldxj"]
 [ext_resource type="AudioStream" uid="uid://cgh3yhduy20o1" path="res://assets/sound_effect/aaaahahahhhahhhah.mp3" id="28_vneqc"]
+[ext_resource type="PackedScene" uid="uid://brhmak5ld1tr2" path="res://scene/pirate.tscn" id="29_io27d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k65ib"]
 resource_name = "terrain"
@@ -2671,3 +2672,9 @@ autoplay = true
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Cinematic"]
 stream = ExtResource("28_vneqc")
 volume_db = 10.0
+
+[node name="AfterCinematic" type="Node2D" parent="."]
+visible = false
+
+[node name="pirate" parent="AfterCinematic" instance=ExtResource("29_io27d")]
+position = Vector2(-56, -48)

@@ -47,7 +47,7 @@ func turn_sprite():
 	elif direction == -1:
 		sprite.play("left")
 
-func jump(jump_velocity = 300):
+func jump(jump_velocity = 600):
 	if is_on_floor():
 		velocity += Vector2(jump_velocity * direction * 0.2, -jump_velocity)
 		direction_change_cooldown.start()

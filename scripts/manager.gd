@@ -15,8 +15,10 @@ var hud : Node
 var cinematic : Node
 var cinematic_animation_player: Node
 var cinematic_camera : Node
+var after_cinematic : Node
 
 var is_main_scene_loaded = false
+var is_cinematic = true
 var save_cooldown = 0.0
 
 var is_dash_unlocked := false
@@ -37,9 +39,12 @@ func _process(delta: float) -> void:
 	else:
 		save_cooldown += delta
 	
-	if is_main_scene_loaded:
+	if is_main_scene_loaded and is_cinematic:
 		if not cinematic_animation_player.is_playing():
 			player_camera.make_current()
+			cinematic.queue_free()
+			after_cinematic.show()
+			is_cinematic = false
 			
 	
 	if Input.is_action_just_pressed("ToggleFullscreen"):
@@ -58,6 +63,7 @@ func main_scene_loaded():
 	cinematic = root.get_node("Main/Cinematic")
 	cinematic_animation_player = root.get_node("Main/Cinematic/AnimationPlayer")
 	cinematic_camera = root.get_node("Main/Cinematic/Camera2D")
+	after_cinematic = root.get_node("Main/AfterCinematic")
 	
 	print(load_game())
 	var save_data = load_game()
@@ -66,6 +72,9 @@ func main_scene_loaded():
 		last_bench_position = save_data[0]
 		is_dash_unlocked = save_data[1]
 		is_double_jump_unlocked = save_data[2]
+		cinematic.queue_free()
+		is_cinematic = false
+		after_cinematic.show()
 	else:
 		cinematic_camera.make_current()
 	
