@@ -1893,7 +1893,7 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("../Kangouroo:visible")
+tracks/20/path = NodePath("Kangouroo:visible")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
@@ -1905,7 +1905,7 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("../Kangouroo:collision_layer")
+tracks/21/path = NodePath("Kangouroo:collision_layer")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
@@ -1917,7 +1917,7 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("../Kangouroo:collision_mask")
+tracks/22/path = NodePath("Kangouroo:collision_mask")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
@@ -2305,7 +2305,7 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("../Kangouroo:visible")
+tracks/20/path = NodePath("Kangouroo:visible")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
@@ -2317,7 +2317,7 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("../Kangouroo:collision_layer")
+tracks/21/path = NodePath("Kangouroo:collision_layer")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
@@ -2329,7 +2329,7 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("../Kangouroo:collision_mask")
+tracks/22/path = NodePath("Kangouroo:collision_mask")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
@@ -2540,12 +2540,6 @@ tile_set = SubResource("TileSet_gtqqq")
 
 [node name="HUD" parent="." instance=ExtResource("7_p1hux")]
 
-[node name="Kangouroo" parent="." instance=ExtResource("8_of57s")]
-visible = false
-position = Vector2(128, -32)
-collision_layer = 0
-collision_mask = 0
-
 [node name="Player" parent="." instance=ExtResource("1_v0l8b")]
 z_index = 1
 position = Vector2(2008, -96)
@@ -2591,6 +2585,8 @@ scale = Vector2(3.6462848, 3.6462858)
 sprite_frames = SubResource("SpriteFrames_io27d")
 animation = &"right"
 autoplay = "right"
+frame = 2
+frame_progress = 0.16694668
 
 [node name="Bubble2" type="AnimatedSprite2D" parent="Cinematic/Abo2"]
 visible = false
@@ -2618,6 +2614,7 @@ scale = Vector2(3.6462848, 3.6462858)
 sprite_frames = SubResource("SpriteFrames_io27d")
 animation = &"right"
 autoplay = "right"
+frame_progress = 0.07326605
 
 [node name="Bubble4" type="AnimatedSprite2D" parent="Cinematic/Abo4"]
 visible = false
@@ -2673,8 +2670,26 @@ autoplay = true
 stream = ExtResource("28_vneqc")
 volume_db = 10.0
 
+[node name="Kangouroo" parent="Cinematic" instance=ExtResource("8_of57s")]
+visible = false
+position = Vector2(128, -32)
+collision_layer = 0
+collision_mask = 0
+
 [node name="AfterCinematic" type="Node2D" parent="."]
 visible = false
 
 [node name="pirate" parent="AfterCinematic" instance=ExtResource("29_io27d")]
 position = Vector2(-56, -48)
+
+[node name="Boat" type="Sprite2D" parent="AfterCinematic"]
+z_index = -10
+position = Vector2(-800, -250)
+rotation = -0.08726646
+scale = Vector2(20, 20)
+texture = ExtResource("22_gn2wi")
+
+[node name="Pirate2" type="Sprite2D" parent="AfterCinematic/Boat"]
+position = Vector2(-2.7999892, 6.5)
+scale = Vector2(0.10212785, 0.11419119)
+texture = ExtResource("25_oldxj")
