@@ -27,4 +27,4 @@ func _process(delta: float) -> void:
 		display_diapo()
 	
 	if diapo_index >= diapos.size():
-		Manager.tree.change_scene_to_file("res://scene/main_menu.tscn")
+		Manager.tree.change_scene_to_packed(Manager.packed_main_scene)

@@ -3,6 +3,7 @@ extends Node
 const SAVE_PATH = "user://Team Frank/The Last Aborigene/"
 
 @export var packed_main_scene = preload("res://scene/main.tscn")
+@export var packed_diapo_scene = preload("res://scene/diaporama.tscn")
 
 @onready var root = Engine.get_main_loop().root
 @onready var tree = root.get_tree()

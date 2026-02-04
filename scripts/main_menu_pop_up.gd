@@ -16,7 +16,8 @@ func _on_yes_button_pressed() -> void:
 	hide()
 	if current_action == ACTION_LIST[0]: # new_game
 		DirAccess.remove_absolute(Manager.SAVE_PATH + "save_game.dat")
-		Manager.tree.change_scene_to_packed(Manager.packed_main_scene)
+		Manager.tree.change_scene_to_packed(Manager.packed_diapo_scene)
+		# Manager.tree.change_scene_to_packed(Manager.packed_main_scene)
 
 
 func _on_no_button_pressed() -> void:
