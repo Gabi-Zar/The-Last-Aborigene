@@ -1,4 +1,133 @@
-Hollow knight and Hollow knight silksong are games created by the australian studio Team cherry. They are metroidvanias and souls like platorm, exploration and hard boss fight in an open world
+//------------------------
 
-The Last Aborigine is a Metroidvania game designed to criticize the Aboriginal genocide. 
-In this game, players take on the role of an Aboriginal victim of the genocide, fighting back against the English colonizers.
+Hollow knight
+
+First of all, Hollow Knight and Hollow Knight: Silksong are video games developed by Team Cherry, an Australian independent studio based in Adelaide. 
+These games belong to the metroidvania genre, with elements of souls-like gameplay. They focus on exploration, platforming, atmosphere, and difficult boss fights in an open world.
+
+Hollow Knight was released in 2017 and became a huge success. 
+It sold around 18 million copies and has more than 97% positive reviews on Steam, which shows how much the game is appreciated by players. 
+The game also received many awards, especially for its artistic direction, world design, and its soundtrack, which plays an important role in creating a dark and emotional atmosphere.
+
+Hollow Knight: Silksong was even more anticipated. Since its release on September 4th, 2025, it sold more than 8 million copies in a very short time. 
+The hype was so intense that it caused server crashes on several platforms such as Steam, Sony, Nintendo, and Microsoft. 
+This clearly shows the impact and influence of an Australian studio on the global video game industry.
+
+//------------------------
+
+Celeste
+
+Celeste is an indie video game developed by Extremely OK Games, a Canadian independent studio, and released in 2018. 
+It is a 2D platform game focused on precision, level design, and difficulty. 
+The gameplay is based on simple mechanics, but they are used in a very intelligent way, making the game both challenging and rewarding. 
+Celeste is also well known for its pixel art style, which is simple but very detailed and visually effective.
+
+The game received many awards and excellent reviews, especially for its artistic direction and its soundtrack. 
+The music adapts to the different environments and supports the rhythm of the gameplay. 
+Thanks to the combination of gameplay mechanics, visual style, and sound design, Celeste is often considered not just a video game, but a real artistic experience created by a small indie studio.
+
+//------------------------
+
+GIMP
+
+GIMP (GNU Image Manipulation Program) is an open-source image editing software. 
+It is completely free and available on different operating systems such as Windows, macOS, and Linux. 
+GIMP is mainly used for image creation, photo editing, and graphic design. 
+Because it is open-source, it can be modified and improved by a community of developers all around the world.
+
+For our artwork, we used GIMP to create and edit visual elements. 
+The software offers many professional tools, such as layers, brushes, filters, color correction, and selection tools. 
+These features allowed us to work on details, textures, and visual composition. 
+Using GIMP shows that it is possible to produce artistic and high-quality work with open-source software, without using expensive proprietary tools.
+
+//------------------------
+
+Godot
+
+Godot is an open-source game engine used to create 2D and 3D video games. 
+It is completely free and works on multiple operating systems such as Windows, macOS, and Linux. 
+Godot is known for being lightweight, efficient, and accessible, which makes it popular among indie developers and students. 
+Because it is open-source, developers can study, modify, and improve the engine.
+
+In our project, Godot was used to design interactive elements and game mechanics. 
+The engine includes tools for scene management, animations, physics, and scripting using its own language called GDScript, which is similar to Python.
+Godot allows creators to focus on creativity and game design rather than technical limitations, proving that open-source software can be powerful and professional.
+
+//------------------------
+
+Visual Studio Code
+
+Visual Studio Code is a free and open-source IDE code editor developed by Microsoft. 
+It is available on many operating systems such as Windows, macOS, and Linux. 
+Visual Studio Code is widely used by developers for programming because it supports all languages.
+It is lightweight, fast, and highly customizable through extensions.
+
+In our project, Visual Studio Code was used to write and edit code, especially for scripting and game logic. 
+The software offers useful features such as syntax highlighting, auto-completion, debugging tools, and version control integration. 
+Using Visual Studio Code allowed us to work efficiently and organize our code clearly, while still using open-source and accessible tools.
+
+//-----------------------
+
+Git
+
+Git is an open-source CLI version control system used to manage and track changes in a project. 
+It allows developers to save different versions of their work and to collaborate efficiently as a team.
+Git works on many operating systems such as Windows, macOS, and Linux, and it is widely used in software development and game creation.
+
+In our project, Git was used to organize the development process and secure our work. 
+It allowed us to track modifications, fix mistakes, and go back to previous versions if needed. 
+Git also makes collaboration easier by managing changes made by different people. 
+Using Git shows a professional and structured approach, even in an open-source and educational project.
+
+//-----------------------
+
+Firefox
+
+Firefox is a free and open-source web browser developed by Mozilla. 
+It is available on many operating systems such as Windows, macOS, and Linux. 
+Firefox is known for its focus on performance, security, and user privacy. 
+Because it is open-source, its code can be reviewed and improved by a large international community.
+
+In our project, Firefox was used for research, documentation, and testing web-based resources. 
+It allowed us to access tutorials, technical documentation, and open-source communities. 
+Using Firefox fits perfectly with our approach, as it is a reliable and ethical tool that supports open-source values while remaining efficient and professional.
+
+//-----------------------
+
+LibreOffice
+
+LibreOffice is a free and open-source office software suite developed by The Document Foundation. 
+It is available on Windows, macOS, and Linux. 
+LibreOffice includes several tools such as Writer for text documents, Impress for presentations, and Calc for spreadsheets. 
+It is widely used as an alternative to proprietary office software.
+
+In our project, LibreOffice was used to write documents and prepare the oral presentation. 
+The software offers all the necessary features for professional work, such as text formatting, slide creation, and file export. 
+Using LibreOffice shows that open-source tools are powerful, accessible, and perfectly adapted for academic and creative projects.
+
+//-----------------------
+
+Our game
+
+Our game, The Last Aborigine, is a Metroidvania game designed to criticize and raise awareness about the Aboriginal genocide. 
+The game uses exploration, progression, and combat mechanics to tell a historical and symbolic story. 
+Players evolve in a hostile world inspired by Australian landscapes, where each area represents a different aspect of colonization.
+
+In this game, players take on the role of an Aboriginal victim of the genocide, fighting back against the English colonizers. 
+Through gameplay, level design, and atmosphere, the game highlights injustice, resistance, and survival. 
+The Last Aborigine uses video games as an artistic and interactive medium to transmit historical memory and encourage reflection, not just entertainment.
+
+//-----------------------
+
+Glossary
+
+Metroidvania = A video game genre based on exploration, backtracking, and progression through unlocked abilities
+Souls like = A type of gameplay inspired by the Dark Souls games, known for difficulty and demanding combat
+Platforming = Gameplay based on jumping, movement, and precision
+
+Open source = Software whose source code is publicly available and modifiable
+Game engine = Software used to create video games
+Version control = System used to manage file changes
+Artistic direction = Overall visual style of a project
+CLI = Command Line Interface = A software that brings together tools to write, edit, and debug code in one place
+IDE = Integrated Development Environment = A text-based interface that allows users to interact with a computer by typing commands
