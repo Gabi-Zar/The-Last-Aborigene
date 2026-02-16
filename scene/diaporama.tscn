@@ -1,10 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsb2xyptx4lji"]
+[gd_scene format=3 uid="uid://dsb2xyptx4lji"]
 
 [ext_resource type="Texture2D" uid="uid://bwcn6q7s6tbyp" path="res://assets/diapo/scene/diapo1.png" id="1_2byv8"]
 [ext_resource type="Script" uid="uid://cuo0e4k3s43vk" path="res://scripts/diaporama.gd" id="1_j4cdv"]
 [ext_resource type="Texture2D" uid="uid://bh21o5qaukqtb" path="res://assets/diapo/scene/diapo2.png" id="2_j4cdv"]
+[ext_resource type="Texture2D" uid="uid://g21q8juixq84" path="res://assets/diapo/scene/diapo3.png" id="4_nso68"]
+[ext_resource type="Texture2D" uid="uid://b7inghsx8w2ku" path="res://assets/diapo/scene/diapo4.png" id="5_dpki7"]
+[ext_resource type="Texture2D" uid="uid://b215uhc62pnrk" path="res://assets/diapo/scene/diapo5.png" id="6_cud8f"]
+[ext_resource type="Texture2D" uid="uid://dwevttuvmfhmo" path="res://assets/diapo/scene/diapo6.png" id="7_kteuj"]
+[ext_resource type="Texture2D" uid="uid://5oen3r3iphfg" path="res://assets/diapo/scene/diapo7.png" id="8_f7jcf"]
+[ext_resource type="Texture2D" uid="uid://bb58ecdei67ot" path="res://assets/diapo/scene/diapo8.png" id="9_o06wp"]
+[ext_resource type="Texture2D" uid="uid://42e5oai0qegx" path="res://assets/diapo/scene/diapo9.png" id="10_cn4ou"]
+[ext_resource type="Texture2D" uid="uid://bik80mt8ovs2w" path="res://assets/diapo/scene/diapo10.png" id="11_13b60"]
+[ext_resource type="Texture2D" uid="uid://dwha57ww75tax" path="res://assets/diapo/scene/diapo11.png" id="12_77068"]
+[ext_resource type="Texture2D" uid="uid://c4glg1sdr75i6" path="res://assets/diapo/scene/diapo12.png" id="13_l3b8u"]
 
-[node name="Diaporama" type="Control"]
+[node name="Diaporama" type="Control" unique_id=2132806591]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j4cdv")
 
-[node name="TextureRect1" type="TextureRect" parent="."]
+[node name="TextureRect1" type="TextureRect" parent="." unique_id=1491941731]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,7 +33,7 @@ grow_vertical = 2
 texture = ExtResource("1_2byv8")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=527015469]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -34,7 +44,7 @@ grow_vertical = 2
 texture = ExtResource("2_j4cdv")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="."]
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=983403393]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -42,10 +52,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_2byv8")
+texture = ExtResource("4_nso68")
 expand_mode = 1
 
-[node name="TextureRect4" type="TextureRect" parent="."]
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=303437625]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -53,10 +63,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_2byv8")
+texture = ExtResource("5_dpki7")
 expand_mode = 1
 
-[node name="TextureRect5" type="TextureRect" parent="."]
+[node name="TextureRect5" type="TextureRect" parent="." unique_id=2096559116]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -64,10 +74,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_2byv8")
+texture = ExtResource("6_cud8f")
 expand_mode = 1
 
-[node name="TextureRect6" type="TextureRect" parent="."]
+[node name="TextureRect6" type="TextureRect" parent="." unique_id=1280783976]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -75,10 +85,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_2byv8")
+texture = ExtResource("7_kteuj")
 expand_mode = 1
 
-[node name="TextureRect7" type="TextureRect" parent="."]
+[node name="TextureRect7" type="TextureRect" parent="." unique_id=43654951]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -86,10 +96,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_2byv8")
+texture = ExtResource("8_f7jcf")
 expand_mode = 1
 
-[node name="TextureRect8" type="TextureRect" parent="."]
+[node name="TextureRect8" type="TextureRect" parent="." unique_id=658386655]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -97,10 +107,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_2byv8")
+texture = ExtResource("9_o06wp")
 expand_mode = 1
 
-[node name="TextureRect9" type="TextureRect" parent="."]
+[node name="TextureRect9" type="TextureRect" parent="." unique_id=761115464]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -108,10 +118,43 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_2byv8")
+texture = ExtResource("10_cn4ou")
 expand_mode = 1
 
-[node name="LabelDiapo" type="Label" parent="."]
+[node name="TextureRect10" type="TextureRect" parent="." unique_id=2127235376]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_13b60")
+expand_mode = 1
+
+[node name="TextureRect11" type="TextureRect" parent="." unique_id=660262125]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_77068")
+expand_mode = 1
+
+[node name="TextureRect12" type="TextureRect" parent="." unique_id=146722744]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_l3b8u")
+expand_mode = 1
+
+[node name="LabelDiapo" type="Label" parent="." unique_id=573111845]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0

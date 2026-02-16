@@ -9,7 +9,14 @@ func _ready():
 		$TextureRect2,
 		$TextureRect3,
 		$TextureRect4,
-		$TextureRect5
+		$TextureRect5,
+		$TextureRect6,
+		$TextureRect7,
+		$TextureRect8,
+		$TextureRect9,
+		$TextureRect10,
+		$TextureRect11,
+		$TextureRect12
 	]
 	display_diapo()
 
