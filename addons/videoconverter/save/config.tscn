@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqmhf2600owau"]
+
+[ext_resource type="Script" uid="uid://y1pjgahmot25" path="res://addons/videoconverter/save/Config.gd" id="1_23t53"]
+
+[node name="SaveParameters" type="Node"]
+script = ExtResource("1_23t53")

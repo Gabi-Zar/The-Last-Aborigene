@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddn01kuopxr2f"]
+
+[ext_resource type="Script" uid="uid://d0nwvoxicqurw" path="res://addons/videoconverter/config/ConfigControl.gd" id="1_je0ax"]
+
+[node name="ConfigDock" type="Control" node_paths=PackedStringArray("fileButton", "fileLine", "varCheckbox")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_je0ax")
+fileButton = NodePath("TabBar/TabContainer/FFMPEG Parameters/BoxContainer/Path/HBoxContainer/Button")
+fileLine = NodePath("TabBar/TabContainer/FFMPEG Parameters/BoxContainer/Path/HBoxContainer/LineEdit")
+varCheckbox = NodePath("TabBar/TabContainer/FFMPEG Parameters/BoxContainer/Var/CheckBox")
+
+[node name="TabBar" type="TabBar" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="TabBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="FFMPEG Parameters" type="MarginContainer" parent="TabBar/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="BoxContainer" type="BoxContainer" parent="TabBar/TabContainer/FFMPEG Parameters"]
+layout_mode = 2
+alignment = 1
+vertical = true
+
+[node name="Path" type="BoxContainer" parent="TabBar/TabContainer/FFMPEG Parameters/BoxContainer"]
+layout_mode = 2
+vertical = true
+
+[node name="Label" type="Label" parent="TabBar/TabContainer/FFMPEG Parameters/BoxContainer/Path"]
+layout_mode = 2
+text = "Lien vers FFMPEG"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabBar/TabContainer/FFMPEG Parameters/BoxContainer/Path"]
+layout_mode = 2
+alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="TabBar/TabContainer/FFMPEG Parameters/BoxContainer/Path/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "C:/zdzddd/ZDZDD/zdddzddd"
+editable = false
+
+[node name="Button" type="Button" parent="TabBar/TabContainer/FFMPEG Parameters/BoxContainer/Path/HBoxContainer"]
+layout_mode = 2
+text = "path"
+
+[node name="Var" type="BoxContainer" parent="TabBar/TabContainer/FFMPEG Parameters/BoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabBar/TabContainer/FFMPEG Parameters/BoxContainer/Var"]
+layout_mode = 2
+text = "Utiliser la variable système"
+vertical_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="TabBar/TabContainer/FFMPEG Parameters/BoxContainer/Var"]
+layout_mode = 2
+button_pressed = true
+
+[connection signal="pressed" from="TabBar/TabContainer/FFMPEG Parameters/BoxContainer/Path/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="toggled" from="TabBar/TabContainer/FFMPEG Parameters/BoxContainer/Var/CheckBox" to="." method="_on_check_box_toggled"]

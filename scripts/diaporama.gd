@@ -23,6 +23,9 @@ func _ready():
 func display_diapo():
 	for i in range(diapos.size()):
 		diapos[i].visible = (i == diapo_index)
+		if diapos[i] is VideoStreamPlayer:
+			diapos[i].play()
+			diapos[i].set_stream_position(0)
 	$LabelDiapo.text = "Diapo %d / %d" % [diapo_index + 1, diapos.size()]
 
 func _process(delta: float) -> void:
