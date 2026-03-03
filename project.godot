@@ -18,7 +18,8 @@ config/name="The Last Aborigene"
 run/main_scene="uid://ch3qt1lbnyc1q"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 0)
-config/icon="res://icon.svg"
+boot_splash/image="uid://dwfrdx6nr7g1v"
+config/icon="uid://dwfrdx6nr7g1v"
 boot_splash/minimum_display_time=5000
 
 [autoload]

@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://dsb2xyptx4lji"]
 
-[ext_resource type="Texture2D" uid="uid://bwcn6q7s6tbyp" path="res://assets/diapo/scene/diapo1.png" id="1_2byv8"]
+[ext_resource type="Texture2D" uid="uid://cc6vu4qsvcnf1" path="res://assets/diapo/scene/diapo1.png" id="1_2byv8"]
 [ext_resource type="Script" uid="uid://cuo0e4k3s43vk" path="res://scripts/diaporama.gd" id="1_j4cdv"]
-[ext_resource type="Texture2D" uid="uid://bh21o5qaukqtb" path="res://assets/diapo/scene/diapo2.png" id="2_j4cdv"]
+[ext_resource type="Texture2D" uid="uid://cdi4akcwpqp5n" path="res://assets/diapo/scene/diapo2.png" id="2_j4cdv"]
 [ext_resource type="VideoStream" uid="uid://da7di2boqt6w5" path="res://assets/diapo/game/silksong.mp4.ogv" id="4_cud8f"]
-[ext_resource type="Texture2D" uid="uid://g21q8juixq84" path="res://assets/diapo/scene/diapo3.png" id="4_nso68"]
-[ext_resource type="Texture2D" uid="uid://b7inghsx8w2ku" path="res://assets/diapo/scene/diapo4.png" id="5_dpki7"]
-[ext_resource type="Texture2D" uid="uid://b215uhc62pnrk" path="res://assets/diapo/scene/diapo5.png" id="6_cud8f"]
+[ext_resource type="Texture2D" uid="uid://dd3ybbrl2psta" path="res://assets/diapo/scene/diapo3.png" id="4_nso68"]
+[ext_resource type="Texture2D" uid="uid://2qhjch8y0xx5" path="res://assets/diapo/scene/diapo4.png" id="5_dpki7"]
+[ext_resource type="Texture2D" uid="uid://c8aodf5je6ar" path="res://assets/diapo/scene/diapo5.png" id="6_cud8f"]
 [ext_resource type="VideoStream" uid="uid://bq5355n030ikm" path="res://assets/diapo/game/celeste.mp4.ogv" id="7_f7jcf"]
-[ext_resource type="Texture2D" uid="uid://dwevttuvmfhmo" path="res://assets/diapo/scene/diapo6.png" id="7_kteuj"]
-[ext_resource type="Texture2D" uid="uid://5oen3r3iphfg" path="res://assets/diapo/scene/diapo7.png" id="8_f7jcf"]
-[ext_resource type="Texture2D" uid="uid://bb58ecdei67ot" path="res://assets/diapo/scene/diapo8.png" id="9_o06wp"]
-[ext_resource type="Texture2D" uid="uid://42e5oai0qegx" path="res://assets/diapo/scene/diapo9.png" id="10_cn4ou"]
-[ext_resource type="Texture2D" uid="uid://bik80mt8ovs2w" path="res://assets/diapo/scene/diapo10.png" id="11_13b60"]
+[ext_resource type="Texture2D" uid="uid://c5vq8rck34btw" path="res://assets/diapo/scene/diapo6.png" id="7_kteuj"]
+[ext_resource type="Texture2D" uid="uid://4f5uxeuj8tbi" path="res://assets/diapo/scene/diapo7.png" id="8_f7jcf"]
+[ext_resource type="Texture2D" uid="uid://dylokuoogmpl3" path="res://assets/diapo/scene/diapo8.png" id="9_o06wp"]
+[ext_resource type="Texture2D" uid="uid://dg370xr6t2o17" path="res://assets/diapo/scene/diapo9.png" id="10_cn4ou"]
+[ext_resource type="Texture2D" uid="uid://y2tb2uepxtgm" path="res://assets/diapo/scene/diapo10.png" id="11_13b60"]
 [ext_resource type="Texture2D" uid="uid://dwha57ww75tax" path="res://assets/diapo/scene/diapo11.png" id="12_77068"]
 [ext_resource type="Texture2D" uid="uid://c4glg1sdr75i6" path="res://assets/diapo/scene/diapo12.png" id="13_l3b8u"]
 
@@ -46,7 +46,7 @@ grow_vertical = 2
 texture = ExtResource("2_j4cdv")
 expand_mode = 1
 
-[node name="TextureRect3" type="VideoStreamPlayer" parent="." unique_id=889047337]
+[node name="Video3" type="VideoStreamPlayer" parent="." unique_id=889047337]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -81,7 +81,7 @@ grow_vertical = 2
 texture = ExtResource("5_dpki7")
 expand_mode = 1
 
-[node name="TextureRect5" type="VideoStreamPlayer" parent="." unique_id=1206940557]
+[node name="Video5" type="VideoStreamPlayer" parent="." unique_id=1206940557]
 visible = false
 layout_mode = 1
 anchors_preset = 15
