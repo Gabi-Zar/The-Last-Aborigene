@@ -2,14 +2,15 @@ extends Control
 
 @onready var diapo_index = 0
 @onready var diapos = []
+var last_video
 
 func _ready():
 	diapos = [
 		$TextureRect1,
 		$TextureRect2,
-		$TextureRect3,
+		$Video3,
 		$TextureRect4,
-		$TextureRect5,
+		$Video5,
 		$TextureRect6,
 		$TextureRect7,
 		$TextureRect8,
@@ -23,9 +24,13 @@ func _ready():
 func display_diapo():
 	for i in range(diapos.size()):
 		diapos[i].visible = (i == diapo_index)
-		if diapos[i] is VideoStreamPlayer:
-			diapos[i].play()
-			diapos[i].set_stream_position(0)
+		if diapo_index < diapos.size():
+			if diapos[diapo_index] == $Video3 || diapos[diapo_index] == $Video5:
+				last_video = diapos[diapo_index]
+				diapos[diapo_index].play()
+			else:
+				if last_video:
+					last_video.stop()
 	$LabelDiapo.text = "Diapo %d / %d" % [diapo_index + 1, diapos.size()]
 
 func _process(delta: float) -> void:
