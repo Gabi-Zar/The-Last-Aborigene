@@ -17,7 +17,7 @@ var is_grabed = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	collectible_sprite_animation.play("collectible_animation")
-	apply_impulse(Vector2(randf_range(-200,200), -500))
+	#apply_impulse(Vector2(randf_range(-200,200), -500))
 	
 	death_timer.wait_time = 0.5
 	death_timer.one_shot = true
