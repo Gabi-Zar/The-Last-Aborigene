@@ -28,9 +28,11 @@ func _physics_process(delta: float) -> void:
 		walk()
 		avoid_void()
 		
-		if randi_range(0,120) == 0:
+		if randi_range(0,90) == 0:
 			gun_particles.restart()
-			Manager.player.update_health(damage)
+			Manager.player.update_health(-1)
+			Manager.player.velocity += position.direction_to(Manager.player.position) * 3000 * Vector2(1, 3)
+			Manager.player.move_and_slide()
 		
 		if direction == 1:
 			gun_particles.position.x = -104
