@@ -2535,11 +2535,11 @@ texture = ExtResource("3_wscrc")
 expand_mode = 1
 
 [node name="CollectibleDash" parent="." unique_id=1998759037 instance=ExtResource("2_wp4xf")]
-position = Vector2(1496, -984)
+position = Vector2(2672, 1065)
 collectible_name = "dash"
 
 [node name="CollectibleDoubleJump" parent="." unique_id=839714953 instance=ExtResource("2_wp4xf")]
-position = Vector2(1568, -992)
+position = Vector2(9096, 1070)
 collectible_name = "double_jump"
 
 [node name="Terrain" type="TileMapLayer" parent="." unique_id=974353778]
