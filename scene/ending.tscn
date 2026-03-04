@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dqgydl6yjjhoh"]
+
+[ext_resource type="Texture2D" uid="uid://6ykrb1se7ogl" path="res://assets/end.png" id="1_sgciq"]
+[ext_resource type="AudioStream" uid="uid://d2g2ymlmvv8kn" path="res://assets/music/52 Sister of the Void.mp3" id="2_pq27v"]
+
+[node name="Ending" type="Node2D" unique_id=1855372392]
+
+[node name="TextureRect1" type="TextureRect" parent="." unique_id=794062123]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_sgciq")
+expand_mode = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=16955081]
+stream = ExtResource("2_pq27v")
+autoplay = true

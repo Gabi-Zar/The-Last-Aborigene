@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bhjusdfu6lgc6"]
+
+[ext_resource type="Texture2D" uid="uid://qvwbgbkjm4l6" path="res://assets/attack.png" id="2_ac3jw"]
+[ext_resource type="Script" uid="uid://ccfiu1ycyc8g" path="res://scripts/star.gd" id="2_script"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yosx4"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ac3jw"]
+radius = 12.165525
+
+[node name="Star" type="CharacterBody2D" unique_id=1705539713]
+collision_layer = 4
+script = ExtResource("2_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2041007208]
+texture = ExtResource("2_ac3jw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1268250519]
+shape = SubResource("CircleShape2D_yosx4")
+
+[node name="DamageArea" type="Area2D" parent="." unique_id=770478691]
+collision_layer = 9
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=276577184]
+shape = SubResource("CircleShape2D_ac3jw")

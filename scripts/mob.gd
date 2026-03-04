@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal died
+
 var hp: int
 var armor: int = 0
 var damage: int = -1
@@ -56,11 +58,16 @@ func take_damage(attack_strenght):
 	var total_damage : int = attack_strenght - armor
 	if total_damage >= 0:
 		hp -= total_damage
-		animation_player.play("damage")
-		blood_particles.restart()
-		damage_audio_player.play()
+		if animation_player:
+			animation_player.play("damage")
+		if blood_particles:
+			blood_particles.restart()
+		if damage_audio_player:
+			damage_audio_player.play()
 		if hp <= 0:
-			Manager.present_mob_list.erase(self)
+			if Manager.present_mob_list.has(self):
+				Manager.present_mob_list.erase(self)
+			emit_signal("died")
 			queue_free()
 
 func follow_player():

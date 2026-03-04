@@ -3,6 +3,7 @@ extends RigidBody2D
 @onready var boomrang_area = $Area2D
 
 const PIRATE_SCRIPT = preload("res://scripts/pirate.gd")
+const COOK_SCRIPT = preload("res://scripts/cook.gd")
 
 var direction = 1
 var return_timer = Timer.new()
@@ -34,22 +35,22 @@ func _physics_process(_delta: float) -> void:
 		apply_force(Vector2((Manager.player.global_position[0] - global_position[0]) * 6, (Manager.player.global_position[1] - global_position[1] - 100) * 6))
 		for mob in Manager.present_mob_list:
 			if mob in boomrang_area.get_overlapping_bodies():
-				# If this overlapping mob is a Pirate, only damage it when double-jump is unlocked
+				# If this overlapping mob is a Pirate or Cook, apply pirate-like rules
 				if mob.get_script() == PIRATE_SCRIPT:
 					if Manager.is_double_jump_unlocked:
 						mob.take_damage(strenght)
-						print("Pirate with double-jump")
+						print("Special mob with double-jump")
 						Manager.hud.add_power(1)
 						if is_down_hit:
 							Manager.player.velocity.y = -650
 					else:
 						mob.take_damage(0)
-						print("Pirate without double-jump")
+						print("Special mob without double-jump")
 						Manager.hud.add_power(1)
 						if is_down_hit:
 							Manager.player.velocity.y = -650
 				else:
-					# Non-pirate mobs behave as before
+					# Non-special mobs behave as before
 					mob.take_damage(strenght)
 					print("Mob")
 					Manager.hud.add_power(1)

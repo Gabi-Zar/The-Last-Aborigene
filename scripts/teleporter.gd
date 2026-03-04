@@ -60,9 +60,9 @@ func _post_teleport_actions() -> void:
 
 	var cam = null
 	if Manager.main:
-		cam = Manager.main.get_node_or_null("CameraBoss")
+		cam = Manager.main.get_node_or_null("BossRoom/CameraBoss")
 	else:
-		cam = get_tree().get_root().get_node_or_null("Main/CameraBoss")
+		cam = get_tree().get_root().get_node_or_null("Main/BossRoom/CameraBoss")
 	if cam:
 		cam.make_current()
 
