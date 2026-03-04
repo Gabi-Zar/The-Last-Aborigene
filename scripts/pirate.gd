@@ -6,7 +6,7 @@ extends "res://scripts/mob.gd"
 func _ready() -> void:
 	hp = 300
 	speed = 50
-	damage = -2
+	damage = -1
 	
 	Manager.present_mob_list.append(self)
 
@@ -30,8 +30,11 @@ func _physics_process(delta: float) -> void:
 		
 		if randi_range(0,90) == 0:
 			gun_particles.restart()
-			Manager.player.update_health(-1)
-			Manager.player.velocity += position.direction_to(Manager.player.position) * 3000 * Vector2(1, 3)
+			if Manager.is_double_jump_unlocked:
+				Manager.player.update_health(-1)
+			else:
+				Manager.player.update_health(0)
+			Manager.player.velocity += position.direction_to(Manager.player.position) * 300 * Vector2(1, 3)
 			Manager.player.move_and_slide()
 		
 		if direction == 1:

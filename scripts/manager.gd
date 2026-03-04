@@ -60,7 +60,7 @@ func main_scene_loaded():
 	player = root.get_node("Main/Player")
 	player_camera = root.get_node("Main/Player/Camera2D")
 	terrain = root.get_node("Main/Terrain")
-	hud = root.get_node("Main/HUD/Control/HUD")
+	hud = root.get_node("Main/HUD")
 	cinematic = root.get_node("Main/Cinematic")
 	cinematic_animation_player = root.get_node("Main/Cinematic/AnimationPlayer")
 	cinematic_camera = root.get_node("Main/Cinematic/Camera2D")

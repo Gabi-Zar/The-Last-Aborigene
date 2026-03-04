@@ -35,7 +35,7 @@ func _ready() -> void:
 	dash_cooldown.one_shot = true
 	add_child(dash_cooldown)
 	
-	damage_cooldown.wait_time = 0.4
+	damage_cooldown.wait_time = 1
 	damage_cooldown.one_shot = true
 	add_child(damage_cooldown)
 
@@ -142,6 +142,16 @@ func _physics_process(delta: float) -> void:
 			Manager.main.add_child(boomrang_instance)
 			boomrang_sprite.hide()
 			boomrang_cooldown = true
+
+	############# Heal #############
+	# If player has full power and is not at full health, pressing "Heal" consumes all power and restores 1 life
+	if Input.is_action_just_pressed("Heal"):
+		var hud = Manager.hud
+		if hud.power_level == hud.MAX_POWER:
+			var max_health = hud.get_node("HealthBar").max_value
+			if health < max_health:
+				hud.set_power_level(hud.power_level - hud.MAX_POWER)
+				update_health(1)
 	
 	############# Game over #############
 	if health <= 0:
@@ -162,3 +172,6 @@ func update_health(life = 1):
 	health += life
 	animation_player.play("damage")
 	damage_audio_player.play()
+
+func update_power(amount = 1):
+	Manager.hud.set_power_level(Manager.hud.power_level + amount)

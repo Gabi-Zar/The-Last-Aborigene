@@ -4,10 +4,16 @@ extends CanvasLayer
 @onready var game_over_menu = $Control/GameOverMenu
 @onready var game_over_menu_animation_player = $Control/GameOverMenu/AnimationPlayer
 @onready var fade_in_out_animation_player = $Control/FadeInOut/AnimationPlayer
+@onready var power_bar_sprite = $Control/HUD/PowerBarSprite
 
 var game_over_menu_state = false
 
+const MAX_POWER := 5
+var power_level := 1
+
+
 func _ready() -> void:
+	_update_power_bar()
 	fade_in_out_animation_player.play("fade_out")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,4 +41,23 @@ func _on_quit_button_pressed() -> void:
 	Manager.tree.quit()
 
 func _on_retry_button_pressed() -> void:
+	Manager.save_game()
 	Manager.tree.change_scene_to_packed(Manager.packed_main_scene)
+	
+	
+func set_power_level(value):
+	power_level = clamp(value, 1, MAX_POWER)
+	_update_power_bar()
+
+func _update_power_bar():
+	
+	var frame_width = power_bar_sprite.texture.get_width() / MAX_POWER
+	var frame_height = power_bar_sprite.texture.get_height() - 1
+	
+	var frame_index = MAX_POWER - power_level # 0 = plein, 4 = vide
+	power_bar_sprite.region_rect = Rect2(frame_width * frame_index, 0, frame_width + 2, frame_height)
+
+
+func add_power(amount: int = 1) -> void:
+	power_level = clamp(power_level + amount, 1, MAX_POWER)
+	_update_power_bar()

@@ -54,7 +54,7 @@ func jump(jump_velocity = 600):
 
 func take_damage(attack_strenght):
 	var total_damage : int = attack_strenght - armor
-	if total_damage > 0:
+	if total_damage >= 0:
 		hp -= total_damage
 		animation_player.play("damage")
 		blood_particles.restart()

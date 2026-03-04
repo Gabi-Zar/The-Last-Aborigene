@@ -1,18 +1,19 @@
-[gd_scene load_steps=20 format=3 uid="uid://da5umeedxk31x"]
+[gd_scene format=3 uid="uid://da5umeedxk31x"]
 
 [ext_resource type="Script" uid="uid://bp170m3jd5j1s" path="res://scripts/hud.gd" id="1_qy82l"]
-[ext_resource type="Texture2D" uid="uid://be84ad63tsgfi" path="res://assets/UI/Buttons/continue_normal.png" id="2_sjh6b"]
-[ext_resource type="Texture2D" uid="uid://ba8e1n6fscgdh" path="res://assets/UI/Buttons/continue_pressed.png" id="3_xphas"]
-[ext_resource type="Texture2D" uid="uid://f50dbj3uis6h" path="res://assets/UI/Buttons/continue_hover.png" id="4_kc6cu"]
-[ext_resource type="Texture2D" uid="uid://ct0e7x10hxec2" path="res://assets/UI/Buttons/quit_normal.png" id="5_62he3"]
-[ext_resource type="Texture2D" uid="uid://cv2jiq1g5r0wo" path="res://assets/UI/Buttons/quit_pressed.png" id="6_b48p2"]
-[ext_resource type="Texture2D" uid="uid://bwc6roi4su7ae" path="res://assets/UI/Buttons/quit_hover.png" id="7_086as"]
-[ext_resource type="Texture2D" uid="uid://bjo2pc2vio4e2" path="res://assets/UI/HealthBar/empty.png" id="8_xphas"]
-[ext_resource type="Texture2D" uid="uid://v0rek4n1mvyn" path="res://assets/UI/HealthBar/full.png" id="9_kc6cu"]
-[ext_resource type="Texture2D" uid="uid://cpgqfr3k2nf86" path="res://assets/UI/vignette.png" id="10_086as"]
-[ext_resource type="Texture2D" uid="uid://dvardvnqbdkv0" path="res://assets/UI/Buttons/retry_normal.png" id="11_mg6t4"]
-[ext_resource type="Texture2D" uid="uid://vcmj6q5d2pdf" path="res://assets/UI/Buttons/retry_pressed.png" id="12_fjvr2"]
-[ext_resource type="Texture2D" uid="uid://vlkkb8mmoau3" path="res://assets/UI/Buttons/retry_hover.png" id="13_nh6w1"]
+[ext_resource type="Texture2D" uid="uid://c014iux10r03o" path="res://assets/UI/Buttons/continue_normal.png" id="2_sjh6b"]
+[ext_resource type="Texture2D" uid="uid://bmwcbqejxcl38" path="res://assets/UI/Buttons/continue_pressed.png" id="3_xphas"]
+[ext_resource type="Texture2D" uid="uid://d4ad0isx5xj7c" path="res://assets/UI/Buttons/continue_hover.png" id="4_kc6cu"]
+[ext_resource type="Texture2D" uid="uid://bter2stbjeleg" path="res://assets/UI/power.png" id="4_mg6t4"]
+[ext_resource type="Texture2D" uid="uid://3r6om201a3ek" path="res://assets/UI/Buttons/quit_normal.png" id="5_62he3"]
+[ext_resource type="Texture2D" uid="uid://cawidnimxe4j2" path="res://assets/UI/Buttons/quit_pressed.png" id="6_b48p2"]
+[ext_resource type="Texture2D" uid="uid://1l3dfhfqxhwj" path="res://assets/UI/Buttons/quit_hover.png" id="7_086as"]
+[ext_resource type="Texture2D" uid="uid://kq42u8nrf3rl" path="res://assets/UI/HealthBar/empty.png" id="8_xphas"]
+[ext_resource type="Texture2D" uid="uid://dcai65fldrj07" path="res://assets/UI/HealthBar/full.png" id="9_kc6cu"]
+[ext_resource type="Texture2D" uid="uid://b4krvctpk5jk6" path="res://assets/UI/vignette.png" id="10_086as"]
+[ext_resource type="Texture2D" uid="uid://crvkqrtrme24r" path="res://assets/UI/Buttons/retry_normal.png" id="11_mg6t4"]
+[ext_resource type="Texture2D" uid="uid://dsqf57yiyb7c6" path="res://assets/UI/Buttons/retry_pressed.png" id="12_fjvr2"]
+[ext_resource type="Texture2D" uid="uid://vkkcfspytocy" path="res://assets/UI/Buttons/retry_hover.png" id="13_nh6w1"]
 
 [sub_resource type="Animation" id="Animation_mg6t4"]
 length = 0.001
@@ -240,10 +241,10 @@ _data = {
 &"game_over_menu_appear": SubResource("Animation_bmv2p")
 }
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" unique_id=787945951]
 script = ExtResource("1_qy82l")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=2080530689]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -251,7 +252,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FadeInOut" type="Control" parent="Control"]
+[node name="FadeInOut" type="Control" parent="Control" unique_id=1027650611]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -260,7 +261,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control/FadeInOut"]
+[node name="ColorRect" type="ColorRect" parent="Control/FadeInOut" unique_id=2015656619]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -269,12 +270,10 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/FadeInOut"]
-libraries = {
-&"": SubResource("AnimationLibrary_fjvr2")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/FadeInOut" unique_id=1247801203]
+libraries/ = SubResource("AnimationLibrary_fjvr2")
 
-[node name="HUD" type="Control" parent="Control"]
+[node name="HUD" type="Control" parent="Control" unique_id=1408143581]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -283,7 +282,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="HealthBar" type="TextureProgressBar" parent="Control/HUD"]
+[node name="HealthBar" type="TextureProgressBar" parent="Control/HUD" unique_id=1756805837]
 layout_mode = 1
 offset_left = 31.999998
 offset_top = 31.999998
@@ -296,7 +295,14 @@ rounded = true
 texture_under = ExtResource("8_xphas")
 texture_progress = ExtResource("9_kc6cu")
 
-[node name="PauseMenu" type="Control" parent="Control"]
+[node name="PowerBarSprite" type="Sprite2D" parent="Control/HUD" unique_id=260748467]
+position = Vector2(64, 151)
+scale = Vector2(3.8815794, 3.7692306)
+texture = ExtResource("4_mg6t4")
+region_enabled = true
+region_rect = Rect2(3.411396, 0, 13.080639, 26)
+
+[node name="PauseMenu" type="Control" parent="Control" unique_id=166589481]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -305,7 +311,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control/PauseMenu"]
+[node name="ColorRect" type="ColorRect" parent="Control/PauseMenu" unique_id=1598374410]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -314,7 +320,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.39215687)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/PauseMenu"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PauseMenu" unique_id=1227404423]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -330,7 +336,7 @@ grow_vertical = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="ContinueTextureButton" type="TextureButton" parent="Control/PauseMenu/VBoxContainer"]
+[node name="ContinueTextureButton" type="TextureButton" parent="Control/PauseMenu/VBoxContainer" unique_id=952636785]
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 texture_normal = ExtResource("2_sjh6b")
@@ -338,7 +344,7 @@ texture_pressed = ExtResource("3_xphas")
 texture_hover = ExtResource("4_kc6cu")
 stretch_mode = 5
 
-[node name="QuitTextureButton" type="TextureButton" parent="Control/PauseMenu/VBoxContainer"]
+[node name="QuitTextureButton" type="TextureButton" parent="Control/PauseMenu/VBoxContainer" unique_id=262225631]
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 texture_normal = ExtResource("5_62he3")
@@ -346,7 +352,7 @@ texture_pressed = ExtResource("6_b48p2")
 texture_hover = ExtResource("7_086as")
 stretch_mode = 5
 
-[node name="GameOverMenu" type="Control" parent="Control"]
+[node name="GameOverMenu" type="Control" parent="Control" unique_id=1864194862]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -355,7 +361,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/GameOverMenu"]
+[node name="TextureRect" type="TextureRect" parent="Control/GameOverMenu" unique_id=1247773678]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -366,12 +372,10 @@ grow_vertical = 2
 texture = ExtResource("10_086as")
 expand_mode = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/GameOverMenu"]
-libraries = {
-&"": SubResource("AnimationLibrary_0ag3n")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/GameOverMenu" unique_id=1697414497]
+libraries/ = SubResource("AnimationLibrary_0ag3n")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/GameOverMenu"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/GameOverMenu" unique_id=1928299588]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -388,7 +392,7 @@ grow_vertical = 2
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="RetryTextureButton" type="TextureButton" parent="Control/GameOverMenu/VBoxContainer"]
+[node name="RetryTextureButton" type="TextureButton" parent="Control/GameOverMenu/VBoxContainer" unique_id=276601554]
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 texture_normal = ExtResource("11_mg6t4")
@@ -396,7 +400,7 @@ texture_pressed = ExtResource("12_fjvr2")
 texture_hover = ExtResource("13_nh6w1")
 stretch_mode = 5
 
-[node name="QuitTextureButton" type="TextureButton" parent="Control/GameOverMenu/VBoxContainer"]
+[node name="QuitTextureButton" type="TextureButton" parent="Control/GameOverMenu/VBoxContainer" unique_id=1929333856]
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 texture_normal = ExtResource("5_62he3")
